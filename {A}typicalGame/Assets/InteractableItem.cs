@@ -14,7 +14,7 @@ public class InteractableItem : MonoBehaviour
     private Transform interactivePoint;
 
     private float velocityFactor = 20000f;
-    private float rotationFactor = 400f;
+    private float rotationFactor = 600f;
     private Vector3 posDelta;
     private Quaternion rotationDelta;
     private float angle;
