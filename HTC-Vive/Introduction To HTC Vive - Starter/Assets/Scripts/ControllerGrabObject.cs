@@ -6,29 +6,29 @@ public class ControllerGrabObject : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
 
-    // 1
+    //current coliding object
     private GameObject collidingObject;
-    // 2
+    //reference to current item in hands
     private GameObject objectInHand;
 
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
     }
-
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
+    //ensures only one object can be grabed at a time
     private void SetCollidingObject(Collider col)
     {
-        // 1
+        //doesn't become a pickup if already holding an object
         if (collidingObject || !col.GetComponent<Rigidbody>())
         {
             return;
         }
-        // 2
+        //assigns object as a potential pickup
         collidingObject = col.gameObject;
     }
 
@@ -57,15 +57,15 @@ public class ControllerGrabObject : MonoBehaviour {
 
     private void GrabObject()
     {
-        // 1
+        // moves object to player hand
         objectInHand = collidingObject;
         collidingObject = null;
-        // 2
+        // makes a new joint that connects to the controller
         var joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
 
-    // 3
+    // new fixed joint
     private FixedJoint AddFixedJoint()
     {
         FixedJoint fx = gameObject.AddComponent<FixedJoint>();
@@ -76,23 +76,23 @@ public class ControllerGrabObject : MonoBehaviour {
 
     private void ReleaseObject()
     {
-        // 1
+        // checks for fixed joint
         if (GetComponent<FixedJoint>())
         {
-            // 2
+            // remove connectien and destrot the joint
             GetComponent<FixedJoint>().connectedBody = null;
             Destroy(GetComponent<FixedJoint>());
-            // 3
+            // controlls speed and rotation after release
             objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
             objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;
         }
-        // 4
+        // remove reference from object
         objectInHand = null;
     }
 
     // Update is called once per frame
     void Update () {
-        // 1
+        // when trigger used pickup object if theres a potential target
         if (Controller.GetHairTriggerDown())
         {
             if (collidingObject)
@@ -101,7 +101,7 @@ public class ControllerGrabObject : MonoBehaviour {
             }
         }
 
-        // 2
+        // release the picked up object
         if (Controller.GetHairTriggerUp())
         {
             if (objectInHand)

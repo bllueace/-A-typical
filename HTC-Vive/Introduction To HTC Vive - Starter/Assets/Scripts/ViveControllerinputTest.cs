@@ -5,9 +5,9 @@ using UnityEngine;
 public class ViveControllerinputTest : MonoBehaviour {
 
 
-    // 1
+    //reference to object being tracked
     private SteamVR_TrackedObject trackedObj;
-    // 2
+    //easy access to controller
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
@@ -20,31 +20,31 @@ public class ViveControllerinputTest : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        // 1
+        // gets trackpad position
         if (Controller.GetAxis() != Vector2.zero)
         {
             Debug.Log(gameObject.name + Controller.GetAxis());
         }
 
-        // 2
+        //checks for trigger press
         if (Controller.GetHairTriggerDown())
         {
             Debug.Log(gameObject.name + " Trigger Press");
         }
 
-        // 3
+        // checks for trigger release
         if (Controller.GetHairTriggerUp())
         {
             Debug.Log(gameObject.name + " Trigger Release");
         }
 
-        // 4
+        // gets grip press
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
             Debug.Log(gameObject.name + " Grip Press");
         }
 
-        // 5
+        // gets grip release
         if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
         {
             Debug.Log(gameObject.name + " Grip Release");

@@ -8,43 +8,43 @@ public class LaserPointer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        // 1
+        // new laser and reference to it in laser
         laser = Instantiate(laserPrefab);
-        // 2
+        // store laser transform
         laserTransform = laser.transform;
 
-        // 1
+        // spawn new reticle and save a reference
         reticle = Instantiate(teleportReticlePrefab);
-        // 2
+        // store the riticles transform
         teleportReticleTransform = reticle.transform;
     }
 
     private SteamVR_TrackedObject trackedObj;
 
-    // 1
+    // reference to laser prefab
     public GameObject laserPrefab;
-    // 2
+    // reference to laser instace
     private GameObject laser;
-    // 3
+    // transfrom component for easy use
     private Transform laserTransform;
-    // 4
+    // laser hit position
     private Vector3 hitPoint;
 
-    // 1
+    // camera rig transform
     public Transform cameraRigTransform;
-    // 2
+    // teleport reticle reference
     public GameObject teleportReticlePrefab;
-    // 3
+    // reticle instance reference
     private GameObject reticle;
-    // 4
+    // teleport reference
     private Transform teleportReticleTransform;
-    // 5
+    // players head reference
     public Transform headTransform;
-    // 6
+    // laser offset
     public Vector3 teleportReticleOffset;
-    // 7
+    // filter layers
     public LayerMask teleportMask;
-    // 8
+    // check for valid location
     private bool shouldTeleport;
 
     private SteamVR_Controller.Device Controller
@@ -59,52 +59,52 @@ public class LaserPointer : MonoBehaviour {
 
     private void ShowLaser(RaycastHit hit)
     {
-        // 1
+        // show the laser
         laser.SetActive(true);
-        // 2
+        // position the laser in the middle of controler
         laserTransform.position = Vector3.Lerp(trackedObj.transform.position, hitPoint, .5f);
-        // 3
+        // point the laser to raycast location
         laserTransform.LookAt(hitPoint);
-        // 4
+        // scale the laser 
         laserTransform.localScale = new Vector3(laserTransform.localScale.x, laserTransform.localScale.y,
             hit.distance);
     }
 
     private void Teleport()
     {
-        // 1
+        // set to false while teleporting
         shouldTeleport = false;
-        // 2
+        // hide reticle
         reticle.SetActive(false);
-        // 3
+        // calculate the difference
         Vector3 difference = cameraRigTransform.position - headTransform.position;
-        // 4
+        // reset the y position
         difference.y = 0;
-        // 5
+        // move the camera rig
         cameraRigTransform.position = hitPoint + difference;
     }
 
     // Update is called once per frame
     void Update () {
-        // 1
+        // if touchpad is held down
         if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
         {
             RaycastHit hit;
 
-            // 2
+            // shoot ray from the controller
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, teleportMask))
             {
                 hitPoint = hit.point;
                 ShowLaser(hit);
-                // 1
+                // show teleprot reticle
                 reticle.SetActive(true);
-                // 2
+                // move reticle to raycast location
                 teleportReticleTransform.position = hitPoint + teleportReticleOffset;
-                // 3
+                // set valid position for teleport
                 shouldTeleport = true;
             }
         }
-        else // 3
+        else // hide the laser when released
         {
             laser.SetActive(false);
             reticle.SetActive(false);
