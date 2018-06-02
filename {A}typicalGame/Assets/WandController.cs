@@ -48,7 +48,9 @@ public class WandController : MonoBehaviour
                     closestitem = item;
                 }
             }
+
             InteractingItem = closestitem;
+            closestitem = null;
 
             if (InteractingItem)
             {
