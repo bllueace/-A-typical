@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ViveControllerinputTest : MonoBehaviour {
 
+    //test 
+    //public GameObject destroyedVersion;
 
     //reference to object being tracked
     private SteamVR_TrackedObject trackedObj;
@@ -42,6 +44,8 @@ public class ViveControllerinputTest : MonoBehaviour {
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
             Debug.Log(gameObject.name + " Grip Press");
+            //Instantiate(destroyedVersion, transform.position, transform.rotation);
+            //Destroy(gameObject);
         }
 
         // gets grip release
