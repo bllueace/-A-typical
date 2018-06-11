@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ControllerGrabObject : MonoBehaviour {
 
-    private SteamVR_TrackedObject trackedObj;
+    protected SteamVR_TrackedObject trackedObj;
 
     //current coliding object
-    private GameObject collidingObject;
+    public GameObject collidingObject;
     //reference to current item in hands
-    private GameObject objectInHand;
+    protected GameObject objectInHand;
 
     private SteamVR_Controller.Device Controller
     {
