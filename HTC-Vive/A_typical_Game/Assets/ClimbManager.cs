@@ -8,6 +8,13 @@ public class ClimbManager : MonoBehaviour {
     public Climbing left;
     public Climbing right;
 
+    //void Start()
+    //{
+    //    var rDevice = SteamVR_Controller.Input((int)right.controller.index); //error out of range TODO
+    //    var lDevice = SteamVR_Controller.Input((int)left.controller.index);
+
+    //}
+
     void FixedUpdate()
     {
         var rDevice = SteamVR_Controller.Input((int)right.controller.index); //error out of range TODO
@@ -26,13 +33,6 @@ public class ClimbManager : MonoBehaviour {
                 Body.transform.position += (left.prevPos - left.transform.localPosition);
 
             }
-            else if (left.canGrip && lDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
-            {
-                Body.useGravity = true;
-                Body.isKinematic = false;
-                Body.velocity = (left.prevPos - left.transform.localPosition) / Time.deltaTime;
-            }
-
             if (right.canGrip && rDevice.GetPress(SteamVR_Controller.ButtonMask.Grip)) // #TODO GetPRessDown?
             {
                 Body.useGravity = false;
@@ -40,18 +40,26 @@ public class ClimbManager : MonoBehaviour {
                 Body.transform.position += (right.prevPos - right.transform.localPosition);
 
             }
-            else if (right.canGrip && rDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
-            {
-                Body.useGravity = true;
-                Body.isKinematic = false;
-                Body.velocity = (right.prevPos - right.transform.localPosition) / Time.deltaTime;
-            }
         }
 
         else
         {
             Body.useGravity = true;
             Body.isKinematic = false;
+        }
+
+        if (left.canGrip && lDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
+        {
+            Body.useGravity = true;
+            Body.isKinematic = false;
+            Body.velocity = (left.prevPos - left.transform.localPosition) / Time.deltaTime;
+        }
+
+        if (right.canGrip && rDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
+        {
+            Body.useGravity = true;
+            Body.isKinematic = false;
+            Body.velocity = (right.prevPos - right.transform.localPosition) / Time.deltaTime;
         }
 
         left.prevPos = left.controller.transform.localPosition;
