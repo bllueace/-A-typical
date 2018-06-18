@@ -11,13 +11,13 @@ public class SwapModels : MonoBehaviour {
     public GameObject spawnable;
     public float fallFix = 0.4f;
     // private SteamVR_RenderModel contrMesh;
-    private MeshRenderer itemMesh;
+    //private GameObject itemMesh;
     
     void Start()
     {
        //contrMesh = controllerModel.GetComponent<SteamVR_RenderModel>();
-       itemMesh = itemModel.GetComponent<MeshRenderer>();
-       itemModel.SetActive(true);
+       //itemMesh = itemModel.GetComponent<MeshRenderer>();
+       //itemModel.SetActive(true);
         
     }
 
@@ -40,7 +40,7 @@ public class SwapModels : MonoBehaviour {
 
         if (itemInHand)
         {
-            itemMesh.enabled = true;
+            itemModel.SetActive(true);
 
             foreach (SteamVR_RenderModel model in controller.GetComponentsInChildren<SteamVR_RenderModel>())
             {
@@ -50,7 +50,7 @@ public class SwapModels : MonoBehaviour {
         }
         else
         {
-            itemMesh.enabled = false;
+            itemModel.SetActive(false);
 
             foreach (SteamVR_RenderModel model in controller.GetComponentsInChildren<SteamVR_RenderModel>())
             {

@@ -15,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - CanTeleport
+  - Teleport
   - Controller
   - Body
   - Grip
