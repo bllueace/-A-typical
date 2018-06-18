@@ -64,5 +64,10 @@ public class ClimbManager : MonoBehaviour {
 
         left.prevPos = left.controller.transform.localPosition;
         right.prevPos = right.controller.transform.localPosition;
+
+        //restart level for testing (to remove)
+        if (lDevice.GetPress(SteamVR_Controller.ButtonMask.ApplicationMenu) || rDevice.GetPress(SteamVR_Controller.ButtonMask.ApplicationMenu))
+            Application.LoadLevel(0);
+
     }
 }
