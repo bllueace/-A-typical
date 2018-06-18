@@ -22,11 +22,7 @@ public class PulseLight : MonoBehaviour {
         else
             brightness -= 0.1f;
 
-        if (brightness > 20)
-            flip = !flip;
-        if (brightness < 5)
-            flip = !flip;
-
+        if (brightness > 20 || brightness < 5)
 
         myLight.range = brightness;
     }

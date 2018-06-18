@@ -8,7 +8,7 @@ public class TooHeavy : MonoBehaviour
     public SteamVR_TrackedObject Controller;
     public bool canPickUp;
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collider col)
     {
         if (col.gameObject.tag == "TooHeavy")
         {
@@ -17,7 +17,7 @@ public class TooHeavy : MonoBehaviour
         }
     }
 
-    void OnTriggerExit()
+    void OnCollisionExit()
     {
         canPickUp = false;
     }

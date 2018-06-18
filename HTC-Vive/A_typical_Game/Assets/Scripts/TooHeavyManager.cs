@@ -26,19 +26,22 @@ public class TooHeavyManager : ControllerGrabObject
         var lDevice = SteamVR_Controller.Input((int)left.Controller.index);
 
 
-        bool canPickUp = left.canPickUp && right.canPickUp;
+        bool PickUpLeft = left.canPickUp;
+        bool pickUpRight = right.canPickUp;
 
 
-        if (canPickUp)
+        if ((PickUpLeft == true) && (pickUpRight == true))
         {
-            if ((left.canPickUp && lDevice.GetPress(SteamVR_Controller.ButtonMask.Trigger)) && (right.canPickUp && rDevice.GetPress(SteamVR_Controller.ButtonMask.Trigger)))
+            if (lDevice.GetPress(SteamVR_Controller.ButtonMask.Trigger) && (rDevice.GetPress(SteamVR_Controller.ButtonMask.Trigger)))
             {
+                Debug.Log("Picking up!");
                 //grab.GrabObject();
             }
         }
 
         if ((left.canPickUp && lDevice.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) && (right.canPickUp && rDevice.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)))
         {
+            Debug.Log("Releasing!");
             //grab.ReleaseObject();
         }
 
