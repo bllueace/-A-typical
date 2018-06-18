@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class BlockSwitch : MonoBehaviour {
 
-    public bool test = false;
     public GameObject myself;
     public GameObject firstBlock;
     public GameObject replacedBlock;
     public GameObject myLight;
 
-    void OnTriggerEnter()
-    {
-        test = true;
 
-        firstBlock.SetActive(false);
-        replacedBlock.SetActive(true);
-        myLight.SetActive(false);
-        myself.SetActive(false);
+    void OnCollisionEnter(Collision target)
+    {
+        Debug.Log("missing block");
+
+        if (target.collider.tag == "missingBlock")
+        {
+            firstBlock.SetActive(false);
+            replacedBlock.SetActive(true);
+            myLight.SetActive(false);
+            myself.SetActive(false);
+        }
+
+
     }
 }
