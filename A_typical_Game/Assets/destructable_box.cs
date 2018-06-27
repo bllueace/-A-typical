@@ -5,7 +5,7 @@ using UnityEngine;
 public class destructable_box : MonoBehaviour
 {
     public GameObject destroyedVersion;
-    public bool test = false;
+    //public bool test = false;
 
 
 

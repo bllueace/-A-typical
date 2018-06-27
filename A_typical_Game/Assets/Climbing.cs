@@ -24,7 +24,7 @@ public class Climbing : MonoBehaviour {
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Grip")) //check if grippable object
         {
-            Debug.Log("GRIPERINOO");
+            //Debug.Log("GRIPERINOO");
             canGrip = true;
         }
     }

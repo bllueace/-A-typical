@@ -7,6 +7,7 @@ TagManager:
   - Pickaxe
   - JointTag
   - missingBlock
+  - Coloured
   layers:
   - Default
   - TransparentFX

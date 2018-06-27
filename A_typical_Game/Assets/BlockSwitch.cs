@@ -12,7 +12,7 @@ public class BlockSwitch : MonoBehaviour {
 
     void OnCollisionEnter(Collision target)
     {
-        Debug.Log("missing block");
+        //Debug.Log("missing block");
 
         if (target.collider.tag == "missingBlock")
         {

@@ -68,6 +68,8 @@ public class ClimbManager : MonoBehaviour {
         //restart level for testing (to remove)
         if (lDevice.GetPress(SteamVR_Controller.ButtonMask.ApplicationMenu) || rDevice.GetPress(SteamVR_Controller.ButtonMask.ApplicationMenu))
             Application.LoadLevel(0);
+        //SceneManager.LoadScene(0);
+
 
     }
 }
