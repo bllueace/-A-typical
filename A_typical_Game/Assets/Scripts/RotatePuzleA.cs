@@ -107,4 +107,12 @@ public class RotatePuzleA : MonoBehaviour
             quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
         }
     }
+
+    void OnTriggerEnter()
+    {
+        if (transform.rotation == quatern)
+        {
+            quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+        }
+    }
 }
