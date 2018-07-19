@@ -8,6 +8,7 @@ TagManager:
   - JointTag
   - missingBlock
   - Coloured
+  - energy
   layers:
   - Default
   - TransparentFX
