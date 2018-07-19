@@ -102,17 +102,25 @@ public class RotatePuzleA : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (transform.rotation == quatern)
+        if (piece == false)
         {
-            quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+
+
+            if (transform.rotation == quatern)
+            {
+                quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+            }
         }
     }
 
     void OnTriggerEnter()
     {
-        if (transform.rotation == quatern)
+        if (piece == false)
         {
-            quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+            if (transform.rotation == quatern)
+            {
+                quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+            }
         }
     }
 }
