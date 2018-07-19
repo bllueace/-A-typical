@@ -12,10 +12,10 @@ public class CheckPuzleASolved : MonoBehaviour
     public RotatePuzleA piece4;
 
 
-    public Texture texture1;
-    public Texture texture2;
-    public Texture texture3;
-    public Texture texture4;
+    //public Texture texture1;
+    //public Texture texture2;
+    //public Texture texture3;
+    //public Texture texture4;
 
 
     // Use this for initialization
@@ -49,10 +49,16 @@ public class CheckPuzleASolved : MonoBehaviour
             Debug.Log("Solved!");
 
 
-            p1.GetComponent<Renderer>().material.mainTexture = texture1;
-            p2.GetComponent<Renderer>().material.mainTexture = texture2;
-            p3.GetComponent<Renderer>().material.mainTexture = texture3;
-            p4.GetComponent<Renderer>().material.mainTexture = texture4;
+            piece1.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            piece2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            piece3.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            piece4.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+
+
+            //p1.GetComponent<Renderer>().material.mainTexture = texture1;
+            //p2.GetComponent<Renderer>().material.mainTexture = texture2;
+            //p3.GetComponent<Renderer>().material.mainTexture = texture3;
+            //p4.GetComponent<Renderer>().material.mainTexture = texture4;
 
 
         }
