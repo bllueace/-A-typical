@@ -1,10 +1,4 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: This object can be set on fire
-//
-//=============================================================================
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 namespace Valve.VR.InteractionSystem
@@ -13,7 +7,7 @@ namespace Valve.VR.InteractionSystem
 	public class FireSource : MonoBehaviour
 	{
 		public GameObject fireParticlePrefab;
-		public bool startActive;
+		//public bool startActive;
 		private GameObject fireObject;
 
 		public ParticleSystem customParticles;
@@ -24,20 +18,20 @@ namespace Valve.VR.InteractionSystem
 		public float ignitionDelay = 0;
 		private float ignitionTime;
 
-		private Hand hand;
+		//private Hand hand;
 
 		public AudioSource ignitionSound;
 
-		public bool canSpreadFromThisSource = true;
+		//public bool canSpreadFromThisSource = true;
 
-		//-------------------------------------------------
-		void Start()
-		{
-			if ( startActive )
-			{
-				StartBurning();
-			}
-		}
+		////-------------------------------------------------
+		//void Start()
+		//{
+		//	if ( startActive )
+		//	{
+		//		StartBurning();
+		//	}
+		//}
 
 
 		//-------------------------------------------------
@@ -61,26 +55,32 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void OnTriggerEnter( Collider other )
 		{
-			if ( isBurning && canSpreadFromThisSource )
-			{
-				other.SendMessageUpwards( "FireExposure", SendMessageOptions.DontRequireReceiver );
-			}
+
+            if(other.gameObject.tag == "energy" && !isBurning)
+            {
+                StartBurning();
+            }
+
+   //         if ( isBurning && canSpreadFromThisSource )
+			//{
+			//	other.SendMessageUpwards( "FireExposure", SendMessageOptions.DontRequireReceiver );
+			//}
 		}
 
 
-		//-------------------------------------------------
-		private void FireExposure()
-		{
-			if ( fireObject == null )
-			{
-				Invoke( "StartBurning", ignitionDelay );
-			}
+		////-------------------------------------------------
+		//private void FireExposure()
+		//{
+		//	if ( fireObject == null )
+		//	{
+		//		Invoke( "StartBurning", ignitionDelay );
+		//	}
 
-			if ( hand = GetComponentInParent<Hand>() )
-			{
-				hand.controller.TriggerHapticPulse( 1000 );
-			}
-		}
+		//	if ( hand = GetComponentInParent<Hand>() )
+		//	{
+		//		hand.controller.TriggerHapticPulse( 1000 );
+		//	}
+		//}
 
 
 		//-------------------------------------------------
