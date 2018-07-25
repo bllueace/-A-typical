@@ -44,8 +44,8 @@ public class ClimbManager : MonoBehaviour {
 
         else
         {
-            Body.useGravity = true;
-            Body.isKinematic = false;
+            //Body.useGravity = true;
+            //Body.isKinematic = false;
         }
 
         if (left.canGrip && lDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
