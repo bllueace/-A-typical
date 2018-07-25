@@ -69,10 +69,11 @@ public class PlayerFeet : MonoBehaviour {
             //Rig.GetComponent<Rigidbody>().isKinematic = true;
             //Rig.GetComponent<Rigidbody>().useGravity = false;
             touching = true;
-            Debug.Log("Hello contact ground");
+            Debug.Log("Contact With Ground!");
         }
         else
         {
+            //touching = false;
             //Rig.GetComponent<Rigidbody>().isKinematic = false;
             //Rig.GetComponent<Rigidbody>().useGravity = true;
         }
@@ -92,7 +93,12 @@ public class PlayerFeet : MonoBehaviour {
             //    Rig.GetComponent<Rigidbody>().useGravity = true;
             //}
             touching = false;
+            Debug.Log("Contact Lost!");
         }
+    }
+    public void SetTouching(bool newTouching)
+    {
+        touching = newTouching;
     }
 
 }
