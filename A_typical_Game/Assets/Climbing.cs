@@ -17,21 +17,19 @@ public class Climbing : MonoBehaviour {
     {
         prevPos = controller.transform.localPosition;
     }
-
+	
 
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Grip")) //check if grippable object
         {
-            Debug.Log("Grip Trigger Enter");
+            //Debug.Log("GRIPERINOO");
             canGrip = true;
         }
     }
     void OnTriggerExit()
     {
-        Debug.Log("Grip Trigger Exit");
         canGrip = false;
     }
-
 }
