@@ -7,6 +7,8 @@ public class ClimbManager : MonoBehaviour {
     public Rigidbody Body;
     public Climbing left;
     public Climbing right;
+    public GameObject feet;
+    bool counter = false;
 
     //void Start()
     //{
@@ -24,21 +26,28 @@ public class ClimbManager : MonoBehaviour {
 
         bool isGripped = left.canGrip || right.canGrip;
 
+        //counter = false;
+
         if (isGripped)
         {
             if (left.canGrip && lDevice.GetPress(SteamVR_Controller.ButtonMask.Grip)) // #TODO GetPRessDown?
             {
-                Body.useGravity = false;
-                Body.isKinematic = true;
+                //Body.useGravity = false;
+                //Body.isKinematic = true;
                 Body.transform.position += (left.prevPos - left.transform.localPosition);
+                feet.GetComponent<PlayerFeet>().SetTouching(true);
+                counter = true;
+                Debug.Log("Gripped Enter");
 
             }
             if (right.canGrip && rDevice.GetPress(SteamVR_Controller.ButtonMask.Grip)) // #TODO GetPRessDown?
             {
-                Body.useGravity = false;
-                Body.isKinematic = true;
+                //Body.useGravity = false;
+                //Body.isKinematic = true;
                 Body.transform.position += (right.prevPos - right.transform.localPosition);
-
+                feet.GetComponent<PlayerFeet>().SetTouching(true);
+                counter = true;
+                Debug.Log("Gripped Enter");
             }
         }
 
@@ -46,20 +55,33 @@ public class ClimbManager : MonoBehaviour {
         {
             //Body.useGravity = true;
             //Body.isKinematic = false;
+            if (counter)
+            {
+                feet.GetComponent<PlayerFeet>().SetTouching(false);
+                counter = false;
+                Debug.Log("NO GRIP");
+            }
+            
         }
 
         if (left.canGrip && lDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
         {
-            Body.useGravity = true;
-            Body.isKinematic = false;
+           // Body.useGravity = true;
+            //Body.isKinematic = false;
             Body.velocity = (left.prevPos - left.transform.localPosition) / Time.deltaTime;
+            feet.GetComponent<PlayerFeet>().SetTouching(false);
+            //counter = false;
+            Debug.Log("Grip Exit");
         }
 
         if (right.canGrip && rDevice.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) //some physics 
         {
-            Body.useGravity = true;
-            Body.isKinematic = false;
+            //Body.useGravity = true;
+            //Body.isKinematic = false;
             Body.velocity = (right.prevPos - right.transform.localPosition) / Time.deltaTime;
+            feet.GetComponent<PlayerFeet>().SetTouching(false);
+            Debug.Log("Grip Exit");
+            //counter = false;
         }
 
         left.prevPos = left.controller.transform.localPosition;
