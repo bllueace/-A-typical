@@ -7,7 +7,6 @@ namespace Valve.VR.InteractionSystem
 	public class FireSource : MonoBehaviour
 	{
 		public GameObject fireParticlePrefab;
-		//public bool startActive;
 		private GameObject fireObject;
 
 		public ParticleSystem customParticles;
@@ -17,41 +16,38 @@ namespace Valve.VR.InteractionSystem
 		public float burnTime;
 		public float ignitionDelay = 0;
 		private float ignitionTime;
-
-		//private Hand hand;
-
 		public AudioSource ignitionSound;
+        GameObject bird;
 
-		//public bool canSpreadFromThisSource = true;
+        ////-------------------------------------------------
+        void Start()
+        {
+            
+            bird = GameObject.Find("PT_Energy");//needs to be changed to "BIRD" object later on
+        }
 
-		////-------------------------------------------------
-		//void Start()
-		//{
-		//	if ( startActive )
-		//	{
-		//		StartBurning();
-		//	}
-		//}
+        //-------------------------------------------------
+        void Update()
+        {
+            if ((burnTime != 0) && (Time.time > (ignitionTime + burnTime)) && isBurning)
+            {
+                isBurning = false;
+                if (customParticles != null)
+                {
+                    customParticles.Stop();
+                }
+                else
+                {
+                    Destroy(fireObject);
+                }
+            }
 
+            if (Vector3.Distance(transform.position, bird.transform.position) < 2.0f)
+            {
+                StartBurning();
+            }
 
-		//-------------------------------------------------
-		void Update()
-		{
-			if ( ( burnTime != 0 ) && ( Time.time > ( ignitionTime + burnTime ) ) && isBurning )
-			{
-				isBurning = false;
-				if ( customParticles != null )
-				{
-					customParticles.Stop();
-				}
-				else
-				{
-					Destroy( fireObject );
-				}
-			}
-		}
-
-
+        }
 		//-------------------------------------------------
 		void OnTriggerEnter( Collider other )
 		{
@@ -60,28 +56,7 @@ namespace Valve.VR.InteractionSystem
             {
                 StartBurning();
             }
-
-   //         if ( isBurning && canSpreadFromThisSource )
-			//{
-			//	other.SendMessageUpwards( "FireExposure", SendMessageOptions.DontRequireReceiver );
-			//}
 		}
-
-
-		////-------------------------------------------------
-		//private void FireExposure()
-		//{
-		//	if ( fireObject == null )
-		//	{
-		//		Invoke( "StartBurning", ignitionDelay );
-		//	}
-
-		//	if ( hand = GetComponentInParent<Hand>() )
-		//	{
-		//		hand.controller.TriggerHapticPulse( 1000 );
-		//	}
-		//}
-
 
 		//-------------------------------------------------
 		private void StartBurning()

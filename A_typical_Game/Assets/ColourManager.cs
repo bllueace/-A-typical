@@ -22,7 +22,6 @@ public class ColourManager : MonoBehaviour {
     void ChangeColour()
     {
         GameObject[] myObjects = GameObject.FindGameObjectsWithTag("Coloured"); //temp, will change so you can send in tag for multiple colour changes
-
         foreach (GameObject Coloured in myObjects)
         {
             ColourChange[] myColours = Coloured.GetComponents<ColourChange>();
@@ -30,9 +29,19 @@ public class ColourManager : MonoBehaviour {
             foreach (ColourChange Script in myColours)
             {
                 Script.enabled = true;
-
             }
         }
+
+        rain.Play();
+        
     }
+
+    public ParticleSystem rain;
+
+    void Start()
+    {
+        rain.Stop();
+    }
+
 }
 
