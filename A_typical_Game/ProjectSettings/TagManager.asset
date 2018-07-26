@@ -9,7 +9,6 @@ TagManager:
   - missingBlock
   - Coloured
   - energy
-  - WP
   layers:
   - Default
   - TransparentFX
