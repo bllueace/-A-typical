@@ -1,87 +1,112 @@
-﻿using UnityEngine;
+﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+//
+// Purpose: This object can be set on fire
+//
+//=============================================================================
+
+using UnityEngine;
 using System.Collections;
 
 namespace Valve.VR.InteractionSystem
 {
-    //-------------------------------------------------------------------------
-    public class FireSource : MonoBehaviour
-    {
-        public GameObject fireParticlePrefab;
-        private GameObject fireObject;
+	//-------------------------------------------------------------------------
+	public class FireSource : MonoBehaviour
+	{
+		public GameObject fireParticlePrefab;
+		public bool startActive;
+		private GameObject fireObject;
 
-        public ParticleSystem customParticles;
+		public ParticleSystem customParticles;
 
-        public bool isBurning;
+		public bool isBurning;
 
-        public float burnTime;
-        public float ignitionDelay = 0;
-        private float ignitionTime;
-        public AudioSource ignitionSound;
-        GameObject bird;
+		public float burnTime;
+		public float ignitionDelay = 0;
+		private float ignitionTime;
 
-        ////-------------------------------------------------
-        void Start()
-        {
+		private Hand hand;
 
-            bird = GameObject.Find("PT_Energy");//needs to be changed to "BIRD" object later on
-        }
+		public AudioSource ignitionSound;
 
-        //-------------------------------------------------
-        void Update()
-        {
-            if ((burnTime != 0) && (Time.time > (ignitionTime + burnTime)) && isBurning)
-            {
-                isBurning = false;
-                if (customParticles != null)
-                {
-                    customParticles.Stop();
-                }
-                else
-                {
-                    Destroy(fireObject);
-                }
-            }
+		public bool canSpreadFromThisSource = true;
 
-            if (Vector3.Distance(transform.position, bird.transform.position) < 2.0f)
-            {
-                StartBurning();
-            }
+		//-------------------------------------------------
+		void Start()
+		{
+			if ( startActive )
+			{
+				StartBurning();
+			}
+		}
 
-        }
-        //-------------------------------------------------
-        void OnTriggerEnter(Collider other)
-        {
 
-            if (other.gameObject.tag == "energy" && !isBurning)
-            {
-                StartBurning();
-            }
-        }
+		//-------------------------------------------------
+		void Update()
+		{
+			if ( ( burnTime != 0 ) && ( Time.time > ( ignitionTime + burnTime ) ) && isBurning )
+			{
+				isBurning = false;
+				if ( customParticles != null )
+				{
+					customParticles.Stop();
+				}
+				else
+				{
+					Destroy( fireObject );
+				}
+			}
+		}
 
-        //-------------------------------------------------
-        private void StartBurning()
-        {
-            isBurning = true;
-            ignitionTime = Time.time;
 
-            // Play the fire ignition sound if there is one
-            if (ignitionSound != null)
-            {
-                ignitionSound.Play();
-            }
+		//-------------------------------------------------
+		void OnTriggerEnter( Collider other )
+		{
+			if ( isBurning && canSpreadFromThisSource )
+			{
+				other.SendMessageUpwards( "FireExposure", SendMessageOptions.DontRequireReceiver );
+			}
+		}
 
-            if (customParticles != null)
-            {
-                customParticles.Play();
-            }
-            else
-            {
-                if (fireParticlePrefab != null)
-                {
-                    fireObject = Instantiate(fireParticlePrefab, transform.position, transform.rotation) as GameObject;
-                    fireObject.transform.parent = transform;
-                }
-            }
-        }
-    }
+
+		//-------------------------------------------------
+		private void FireExposure()
+		{
+			if ( fireObject == null )
+			{
+				Invoke( "StartBurning", ignitionDelay );
+			}
+
+			if ( hand = GetComponentInParent<Hand>() )
+			{
+				hand.controller.TriggerHapticPulse( 1000 );
+			}
+		}
+
+
+		//-------------------------------------------------
+		private void StartBurning()
+		{
+			isBurning = true;
+			ignitionTime = Time.time;
+
+			// Play the fire ignition sound if there is one
+			if ( ignitionSound != null )
+			{
+				ignitionSound.Play();
+			}
+
+			if ( customParticles != null )
+			{
+				customParticles.Play();
+			}
+			else
+			{
+				if ( fireParticlePrefab != null )
+				{
+					fireObject = Instantiate( fireParticlePrefab, transform.position, transform.rotation ) as GameObject;
+					fireObject.transform.parent = transform;
+				}
+			}
+		}
+	}
 }

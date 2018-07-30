@@ -11,13 +11,15 @@ public class PulseLight : MonoBehaviour {
     public float minBrightness = 5;
     public float maxBrightness = 20;
     public float rate = 0.1f;
+    private float brightness = 1;
 
-    private float brightness = 12;
+
     private bool flip = false;
 
 	void Start ()
     {
-		myLight = gameLight.GetComponent<Light>();
+        brightness = minBrightness;
+        myLight = gameLight.GetComponent<Light>();
     }
 	
 	void Update ()
