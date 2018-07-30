@@ -15,6 +15,11 @@ TagManager:
   - Pickaxe
   - missingBlock
   - NPC
+  - SnapCube
+  - SnapCylinder
+  - Saucers
+  - TeleportIgnore
+  - Puzzle
   layers:
   - Default
   - TransparentFX
