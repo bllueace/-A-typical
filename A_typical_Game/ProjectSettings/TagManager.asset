@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - JointTag
+  - Coloured
+  - Leg
+  - Arm
+  - Torso
+  - energy
+  - Head
+  - ExcludeTeleport
+  - Pickaxe
+  - missingBlock
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -13,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - IgnoreTeleport
   - 
   - 
   - 
