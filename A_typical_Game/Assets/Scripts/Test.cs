@@ -6,9 +6,11 @@ public class Test : MonoBehaviour {
 
     Animator anim;
 
+    GameObject player;
     // Use this for initialization
     void Start()
     {
+        player = GameObject.Find("Model");
         anim = GetComponent<Animator>();
 
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("Path1"), "time", 20, "easetype", iTween.EaseType.easeOutSine,"orientToPath", true, "lookTime", 0.5,"lookAhead",0.001,"oncomplete", "onPath1Complete"));
@@ -26,9 +28,15 @@ public class Test : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-    
-        if(Input.GetKeyDown("space"))
+
+
+        float dist = Vector3.Distance(player.transform.position, transform.position);
+
+        Vector3 dist2 = player.transform.position;
+
+        Debug.Log("Distance to bird:" + dist2);
+
+        if (Input.GetKeyDown("space"))
         {
             anim.Play(stateName: "FlyStart");
 
