@@ -9,6 +9,7 @@ public class CheckPuzleDSolved : MonoBehaviour
     public RotatePuzle piece3;
     public RotatePuzle piece4;
 
+    public Texture T_emi_lineBottomLeft;
 
     public bool puzleSolved;
 
@@ -45,6 +46,13 @@ public class CheckPuzleDSolved : MonoBehaviour
                 piece4.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
 
                 puzleSolved = true;
+                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Left", T_emi_lineBottomLeft);
+
+            }
+
+            else
+            {
+                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Left", null);
             }
         }
     }

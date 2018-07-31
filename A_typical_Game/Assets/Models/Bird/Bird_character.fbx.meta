@@ -134,9 +134,6 @@ ModelImporter:
     400126: tail_02_jnt
     400128: tail_end_jnt
     2100000: lambert1
-    2100002: M_color_redBrighter
-    2100004: M_color_redDarker
-    2100006: M_color_red
     4300000: bird_obj
     9500000: //RootNode
     13700000: bird_obj

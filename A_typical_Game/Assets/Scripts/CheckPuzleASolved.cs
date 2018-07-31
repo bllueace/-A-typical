@@ -9,6 +9,7 @@ public class CheckPuzleASolved : MonoBehaviour
     public RotatePuzle piece3;
     public RotatePuzle piece4;
 
+    public Texture T_emi_lineBottomRight;
 
     public bool puzleSolved;
 
@@ -42,16 +43,18 @@ public class CheckPuzleASolved : MonoBehaviour
                 piece2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                 piece3.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                 piece4.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-
-                //if(allPuzlesSolved == 4)
-                //{
-                //    GameObject room2 = GameObject.Find("Room1_puzzleA");
-
-                //    room2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-
-                //}
                 puzleSolved = true;
+
+
+                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", T_emi_lineBottomRight);
+
             }
+            else
+            {
+                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", null);
+            }
+           
+
         }
     }
 }

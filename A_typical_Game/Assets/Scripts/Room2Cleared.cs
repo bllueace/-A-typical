@@ -9,6 +9,10 @@ public class Room2Cleared : MonoBehaviour
     public CheckPuzleCSolved puzleC;
     public CheckPuzleDSolved puzleD;
 
+
+    public Texture T_emi_Circles;
+    public Texture T_emi_lineDoor;
+
     // Use this for initialization
     void Start()
     {
@@ -31,11 +35,38 @@ public class Room2Cleared : MonoBehaviour
         if(puzleA.puzleSolved == true && puzleB.puzleSolved == true && puzleC.puzleSolved == true && puzleD.puzleSolved == true)
         {
             {
-                GameObject room2 = GameObject.Find("Room1_puzzleA");
+                GameObject door1 = GameObject.Find("Room1_door1_piece_1");
+                door1.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
 
-                room2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                GameObject door2 = GameObject.Find("Room1_door1_piece_2");
+                door2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+
+                GameObject door3 = GameObject.Find("Room1_door1_piece_3");
+                door3.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+
+                GameObject door4 = GameObject.Find("Room1_door1_piece_4");
+                door4.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+
+                GameObject door5 = GameObject.Find("Room1_door1_piece_5");
+                door5.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+
+                GameObject door6 = GameObject.Find("Room1_door1_piece_6");
+                door6.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+
+                GameObject door7 = GameObject.Find("Room1_door1_piece_7");
+                door7.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
 
             }
+           transform.GetComponent<Renderer>().material.SetTexture("_Emi_circles", T_emi_Circles);
+           transform.GetComponent<Renderer>().material.SetTexture("_Emi_Line_door", T_emi_lineDoor);
+
+            Debug.Log("All solved!");
+        }
+
+        else
+        {
+            transform.parent.GetComponent<Renderer>().material.SetTexture("_Emi_circles", null);
+            transform.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_door", null);
         }
     }
 }
