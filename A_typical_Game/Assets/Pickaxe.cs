@@ -7,7 +7,7 @@ public class Pickaxe : MonoBehaviour
 
     public GameObject Myself;
     public SteamVR_TrackedObject controller;
-    bool counter = false;
+    public bool counter = false;
 
     void FixedUpdate()
     {
