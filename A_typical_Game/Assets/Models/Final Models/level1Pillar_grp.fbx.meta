@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: bf6e260ac8b724440b13438fc40c5ae6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: pillarBird1
+    100004: pillarBird2
+    100006: pillarBird3
+    100008: pillarBird4
+    100010: pillarBird5
+    100012: pillarBroken1
+    100014: pillarBroken2
+    100016: pillarBroken3
+    100018: pillarBroken4
+    100020: pillarWhole1
+    100022: pillarWhole2
+    100024: pillarWhole3
+    100026: pillarWhole4
+    100028: pillarWhole5
+    400000: //RootNode
+    400002: pillarBird1
+    400004: pillarBird2
+    400006: pillarBird3
+    400008: pillarBird4
+    400010: pillarBird5
+    400012: pillarBroken1
+    400014: pillarBroken2
+    400016: pillarBroken3
+    400018: pillarBroken4
+    400020: pillarWhole1
+    400022: pillarWhole2
+    400024: pillarWhole3
+    400026: pillarWhole4
+    400028: pillarWhole5
+    2100000: lambert1
+    2300000: pillarBird1
+    2300002: pillarBird2
+    2300004: pillarBird3
+    2300006: pillarBird4
+    2300008: pillarBird5
+    2300010: pillarBroken1
+    2300012: pillarBroken2
+    2300014: pillarBroken3
+    2300016: pillarBroken4
+    2300018: pillarWhole1
+    2300020: pillarWhole2
+    2300022: pillarWhole3
+    2300024: pillarWhole4
+    2300026: pillarWhole5
+    3300000: pillarBird1
+    3300002: pillarBird2
+    3300004: pillarBird3
+    3300006: pillarBird4
+    3300008: pillarBird5
+    3300010: pillarBroken1
+    3300012: pillarBroken2
+    3300014: pillarBroken3
+    3300016: pillarBroken4
+    3300018: pillarWhole1
+    3300020: pillarWhole2
+    3300022: pillarWhole3
+    3300024: pillarWhole4
+    3300026: pillarWhole5
+    4300000: pillarWhole1
+    4300002: pillarBird1
+    4300004: pillarWhole2
+    4300006: pillarBird2
+    4300008: pillarWhole3
+    4300010: pillarBird3
+    4300012: pillarWhole4
+    4300014: pillarBird4
+    4300016: pillarWhole5
+    4300018: pillarBird5
+    4300020: pillarBroken1
+    4300022: pillarBroken2
+    4300024: pillarBroken3
+    4300026: pillarBroken4
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
