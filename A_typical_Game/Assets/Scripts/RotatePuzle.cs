@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class RotatePuzle : MonoBehaviour
 {
+
+    public GameObject leftHand;
+    public GameObject rightHand; 
+
+
     float speed = 90.0f;
     Quaternion quatern;
 
@@ -35,25 +40,35 @@ public class RotatePuzle : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (blockCorrect == false)
-        {
+        //if (blockCorrect == false)
+        //{
 
 
             if (transform.localRotation == quatern)
             {
                 quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
             }
-        }
+        //}
     }
 
-    void OnTriggerEnter()
+    void OnColliderEnter(Collider other)
     {
-        if (blockCorrect == false)
-        {
-            if (transform.localRotation == quatern)
+        //if (blockCorrect == false)
+        //{
+            if(other.gameObject.name == "Controller (left)")
             {
-                quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+                if (transform.localRotation == quatern)
+                {
+                    quatern = Quaternion.AngleAxis(-90.0f, Vector3.up) * quatern;
+                }
             }
-        }
+            if (other.gameObject.name == "Controller (rigth)")
+            {
+                if (transform.localRotation == quatern)
+                {
+                    quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+                }
+            }
+       // }
     }
 }

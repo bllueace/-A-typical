@@ -65,8 +65,8 @@ public class Room2Cleared : MonoBehaviour
 
         else
         {
-            transform.parent.GetComponent<Renderer>().material.SetTexture("_Emi_circles", null);
-            transform.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_door", null);
+            transform.GetComponent<Renderer>().material.SetTexture("_Emi_circles", null);
+            transform.GetComponent<Renderer>().material.SetTexture("_Emi_Line_door", null);
         }
     }
 }
