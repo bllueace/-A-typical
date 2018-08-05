@@ -11,16 +11,36 @@ public class destructable_box : MonoBehaviour
 
     void OnCollisionEnter(Collision target)
     {
-        Debug.Log("pickaxe hit");
+        Debug.Log("pickaxe hit collision");
 
         if (target.collider.tag == "Pickaxe")
         {
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             Instantiate(destroyedVersion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
-
+        
     }
+
+    //void OnTriggerEnter(Collision target)
+    //{
+    //    Debug.Log("pickaxe hit trigger");
+
+    //    if (target.collider.tag == "Pickaxe")
+    //    {
+    //        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+    //        gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+    //        Instantiate(destroyedVersion, transform.position, transform.rotation);
+    //        Destroy(gameObject);
+    //    }
+
+
+    //}
     //void OnCollisionStay(Collision target)
     //{
     //    Debug.Log("GOnCollisionStay");

@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: ac0fea2c3f095c44ab1cc89bf410cd99
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: level1RockBrkn_grp
+    100004: rockLrgBrkn_01
+    100006: rockLrgBrkn_01_grp
+    100008: rockLrgBrkn_02
+    100010: rockLrgBrkn_03
+    100012: rockLrgBrkn_04
+    100014: rockLrgBrkn_05
+    100016: rockMedBrkn_01
+    100018: rockMedBrkn_01_grp
+    100020: rockMedBrkn_02
+    100022: rockMedBrkn_03
+    100024: rockMedBrkn_04
+    100026: rockMedBrkn_05
+    100028: rockSmlBrkn_01
+    100030: rockSmlBrkn_01 1
+    100032: rockSmlBrkn_01_grp
+    100034: rockSmlBrkn_02
+    100036: rockSmlBrkn_02 1
+    100038: rockSmlBrkn_02_grp
+    100040: rockSmlBrkn_03
+    100042: rockSmlBrkn_03 1
+    100044: rockSmlBrkn_04
+    100046: rockSmlBrkn_04 1
+    100048: rockSmlBrkn_05
+    100050: rockSmlBrkn_05 1
+    400000: //RootNode
+    400002: level1RockBrkn_grp
+    400004: rockLrgBrkn_01
+    400006: rockLrgBrkn_01_grp
+    400008: rockLrgBrkn_02
+    400010: rockLrgBrkn_03
+    400012: rockLrgBrkn_04
+    400014: rockLrgBrkn_05
+    400016: rockMedBrkn_01
+    400018: rockMedBrkn_01_grp
+    400020: rockMedBrkn_02
+    400022: rockMedBrkn_03
+    400024: rockMedBrkn_04
+    400026: rockMedBrkn_05
+    400028: rockSmlBrkn_01
+    400030: rockSmlBrkn_01 1
+    400032: rockSmlBrkn_01_grp
+    400034: rockSmlBrkn_02
+    400036: rockSmlBrkn_02 1
+    400038: rockSmlBrkn_02_grp
+    400040: rockSmlBrkn_03
+    400042: rockSmlBrkn_03 1
+    400044: rockSmlBrkn_04
+    400046: rockSmlBrkn_04 1
+    400048: rockSmlBrkn_05
+    400050: rockSmlBrkn_05 1
+    2100000: lambert1
+    2300000: rockLrgBrkn_01
+    2300002: rockLrgBrkn_02
+    2300004: rockLrgBrkn_03
+    2300006: rockLrgBrkn_04
+    2300008: rockLrgBrkn_05
+    2300010: rockMedBrkn_01
+    2300012: rockMedBrkn_02
+    2300014: rockMedBrkn_03
+    2300016: rockMedBrkn_04
+    2300018: rockMedBrkn_05
+    2300020: rockSmlBrkn_01
+    2300022: rockSmlBrkn_01 1
+    2300024: rockSmlBrkn_02
+    2300026: rockSmlBrkn_02 1
+    2300028: rockSmlBrkn_03
+    2300030: rockSmlBrkn_03 1
+    2300032: rockSmlBrkn_04
+    2300034: rockSmlBrkn_04 1
+    2300036: rockSmlBrkn_05
+    2300038: rockSmlBrkn_05 1
+    3300000: rockLrgBrkn_01
+    3300002: rockLrgBrkn_02
+    3300004: rockLrgBrkn_03
+    3300006: rockLrgBrkn_04
+    3300008: rockLrgBrkn_05
+    3300010: rockMedBrkn_01
+    3300012: rockMedBrkn_02
+    3300014: rockMedBrkn_03
+    3300016: rockMedBrkn_04
+    3300018: rockMedBrkn_05
+    3300020: rockSmlBrkn_01
+    3300022: rockSmlBrkn_01 1
+    3300024: rockSmlBrkn_02
+    3300026: rockSmlBrkn_02 1
+    3300028: rockSmlBrkn_03
+    3300030: rockSmlBrkn_03 1
+    3300032: rockSmlBrkn_04
+    3300034: rockSmlBrkn_04 1
+    3300036: rockSmlBrkn_05
+    3300038: rockSmlBrkn_05 1
+    4300000: rockLrgBrkn_01
+    4300002: rockLrgBrkn_02
+    4300004: rockLrgBrkn_03
+    4300006: rockLrgBrkn_04
+    4300008: rockLrgBrkn_05
+    4300010: rockMedBrkn_01
+    4300012: rockMedBrkn_02
+    4300014: rockMedBrkn_03
+    4300016: rockMedBrkn_04
+    4300018: rockMedBrkn_05
+    4300020: rockSmlBrkn_01
+    4300022: rockSmlBrkn_02
+    4300024: rockSmlBrkn_03
+    4300026: rockSmlBrkn_04
+    4300028: rockSmlBrkn_05
+    4300030: rockSmlBrkn_01
+    4300032: rockSmlBrkn_02
+    4300034: rockSmlBrkn_03
+    4300036: rockSmlBrkn_04
+    4300038: rockSmlBrkn_05
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

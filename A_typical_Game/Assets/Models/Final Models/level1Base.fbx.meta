@@ -3,12 +3,14 @@ guid: 99b3ce752ab963e4482f7f64b3fb35ff
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: level1Base
+    100002: //RootNode
+    400000: level1Base
+    400002: //RootNode
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: levelOneBase
+    2300000: level1Base
+    3300000: level1Base
+    4300000: level1Base
   externalObjects: {}
   materials:
     importMaterials: 1
