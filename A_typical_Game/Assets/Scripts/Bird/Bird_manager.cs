@@ -29,7 +29,7 @@ public class Bird_manager : MonoBehaviour {
         //The bird flies out of the pit, circle the player and then lands by narrative assets
         //anim.SetBool("Idle", false);
         anim.SetBool("FlyStart", true);
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPitToNarrative"), "time", 20, "easetype", iTween.EaseType.easeOutSine, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPitToNarrativeComplete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPitToNarrative"), "time", 20, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPitToNarrativeComplete"));
 
     }
 
@@ -56,7 +56,7 @@ public class Bird_manager : MonoBehaviour {
         //Bird flies to a pillar, land on it
         anim.SetBool("FlyStart", true);
         anim.SetBool("FlyStop", false);
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 10, "easetype", iTween.EaseType.easeOutSine, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromNarrativeToPillarComplete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromNarrativeToPillarComplete"));
     }
 
     void onFromNarrativeToPillarComplete() // Path: from narrative to pillar
@@ -83,7 +83,7 @@ public class Bird_manager : MonoBehaviour {
         //Bird flies to the pickaxe, land on it
         anim.SetBool("FlyStart", true);
         anim.SetBool("FlyStop", false);
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPillarToPickaxe"), "time", 10, "easetype", iTween.EaseType.easeOutSine, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPillarToPickaxeComplete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPillarToPickaxe"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPillarToPickaxeComplete"));
     }
 
     void onFromPillarToPickaxeComplete() // Path: from pillar to pickaxe
@@ -110,7 +110,7 @@ public class Bird_manager : MonoBehaviour {
         //Bird flies to the pickaxe, land on it
         anim.SetBool("FlyStart", true);
         anim.SetBool("FlyStop", false);
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPickaxeToCaventrance"), "time", 10, "easetype", iTween.EaseType.easeOutSine, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPickaxeToCaveEntranceComplete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPickaxeToCaventrance"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPickaxeToCaveEntranceComplete"));
     }
 
     void onFromPickaxeToCaveEntranceComplete() // Path: from pillar to pickaxe
@@ -139,7 +139,7 @@ public class Bird_manager : MonoBehaviour {
         //Bird flies to the pickaxe, land on it
         anim.SetBool("FlyStart", true);
         anim.SetBool("FlyStop", false);
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromCaveentranceToPuzzleA"), "time", 10, "easetype", iTween.EaseType.easeOutSine, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPCaveEntranceToPuzzleAComplete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromCaveentranceToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPCaveEntranceToPuzzleAComplete"));
     }
 
     void onFromPCaveEntranceToPuzzleAComplete() // Path: from pillar to pickaxe
@@ -151,5 +151,14 @@ public class Bird_manager : MonoBehaviour {
         Debug.Log("I have arrived (puzzleA)! *chirp* *chirp*");
         //StartCoroutine(WaitToLeavepuzzleA()); Prototype stops there
     }
-//END MOVE FROM CAVE ENTRANCE TO PUZZLE A
+    //END MOVE FROM CAVE ENTRANCE TO PUZZLE A
+    void Update()
+{
+        if (Input.GetKeyDown("c"))
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromCaveentranceToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onFromPCaveEntranceToPuzzleAComplete"));
+            ;
+        }
+    }
 }
+

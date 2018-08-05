@@ -46,6 +46,11 @@ namespace Valve.VR.InteractionSystem
             {
                 StartBurning();
             }
+            //test code
+            if (Input.GetKeyDown("f"))
+            {
+                StartBurning();
+            }
 
         }
         //-------------------------------------------------
