@@ -29,6 +29,8 @@ public class CaveentranceCollider : MonoBehaviour {
         } while (!HasReachedCaveentrance);
     }
 
+
+
     //The part bellow can't work because the colliders block from teleporting
     /*void OnTriggerEnter(Collider c)
     {
