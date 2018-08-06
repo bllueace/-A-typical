@@ -5,13 +5,14 @@ using UnityEngine;
 public class destructable_box : MonoBehaviour
 {
     public GameObject destroyedVersion;
+    public GameObject parent;
     //public bool test = false;
 
 
 
     void OnCollisionEnter(Collision target)
     {
-        Debug.Log("pickaxe hit collision");
+        //Debug.Log("pickaxe hit collision");
 
         if (target.collider.tag == "Pickaxe")
         {
@@ -21,6 +22,7 @@ public class destructable_box : MonoBehaviour
 
             Instantiate(destroyedVersion, transform.position, transform.rotation);
             Destroy(gameObject);
+            parent.SetActive(false);
         }
 
         

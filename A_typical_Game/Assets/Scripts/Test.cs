@@ -23,7 +23,7 @@ public class Test : MonoBehaviour {
 
         anim.Play(stateName: "FlyEnd");
 
-        Debug.Log("I have arived! *chirp* *chirp*");
+        //Debug.Log("I have arived! *chirp* *chirp*");
     }
 
 	// Update is called once per frame
@@ -34,7 +34,7 @@ public class Test : MonoBehaviour {
 
         Vector3 dist2 = player.transform.position;
 
-        Debug.Log("Distance to bird:" + dist2);
+        //Debug.Log("Distance to bird:" + dist2);
 
         if (Input.GetKeyDown("space"))
         {

@@ -69,7 +69,7 @@ public class PlayerFeet : MonoBehaviour {
             //Rig.GetComponent<Rigidbody>().isKinematic = true;
             //Rig.GetComponent<Rigidbody>().useGravity = false;
             touching = true;
-            Debug.Log("Hello contact ground");
+            //Debug.Log("Hello contact ground");
         }
         else
         {

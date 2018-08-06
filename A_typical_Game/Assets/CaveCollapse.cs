@@ -5,7 +5,7 @@ using UnityEngine;
 public class CaveCollapse : MonoBehaviour {
 
     [SerializeField] Transform Player;
-    public GameObject statue, beak, statueFallen;
+    public GameObject statue, beak, statueFallen, tpBlock;
     // Use this for initialization
     void Start () {
 		
@@ -20,6 +20,7 @@ public class CaveCollapse : MonoBehaviour {
             statue.SetActive(false);
             beak.SetActive(true);
             statueFallen.SetActive(true);
+            tpBlock.SetActive(true);
         }
     }
 

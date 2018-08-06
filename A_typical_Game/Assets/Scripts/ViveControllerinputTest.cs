@@ -25,25 +25,25 @@ public class ViveControllerinputTest : MonoBehaviour {
         // gets trackpad position
         if (Controller.GetAxis() != Vector2.zero)
         {
-            Debug.Log(gameObject.name + Controller.GetAxis());
+            //Debug.Log(gameObject.name + Controller.GetAxis());
         }
 
         //checks for trigger press
         if (Controller.GetHairTriggerDown())
         {
-            Debug.Log(gameObject.name + " Trigger Press");
+            //Debug.Log(gameObject.name + " Trigger Press");
         }
 
         // checks for trigger release
         if (Controller.GetHairTriggerUp())
         {
-            Debug.Log(gameObject.name + " Trigger Release");
+            //Debug.Log(gameObject.name + " Trigger Release");
         }
 
         // gets grip press
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
-            Debug.Log(gameObject.name + " Grip Press");
+            //Debug.Log(gameObject.name + " Grip Press");
             //Instantiate(destroyedVersion, transform.position, transform.rotation);
             //Destroy(gameObject);
         }
@@ -51,7 +51,7 @@ public class ViveControllerinputTest : MonoBehaviour {
         // gets grip release
         if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
         {
-            Debug.Log(gameObject.name + " Grip Release");
+            //Debug.Log(gameObject.name + " Grip Release");
         }
     }
 }

@@ -65,6 +65,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4024534789691158}
+  - component: {fileID: 114622664393742534}
   m_Layer: 0
   m_Name: rockLrgBrkn_01_grp
   m_TagString: Untagged
@@ -233,6 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4646880345944110}
+  - component: {fileID: 114474690406980218}
   m_Layer: 0
   m_Name: rockMedBrkn_01_grp
   m_TagString: Untagged
@@ -363,6 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4687242207043036}
+  - component: {fileID: 114572666433030052}
   m_Layer: 0
   m_Name: rockSmlBrkn_02_grp
   m_TagString: Untagged
@@ -424,6 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4849451474234332}
+  - component: {fileID: 114586248724637350}
   m_Layer: 0
   m_Name: rockSmlBrkn_01_grp
   m_TagString: Untagged
@@ -3262,6 +3266,18 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
+--- !u!114 &114474690406980218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509600107468830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9695062d4cfaa4d848a2910198d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePerSecond: 2.5
 --- !u!114 &114487723639713166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3445,6 +3461,18 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+--- !u!114 &114572666433030052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556735745223120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9695062d4cfaa4d848a2910198d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePerSecond: 2.5
 --- !u!114 &114582947848819272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3477,6 +3505,18 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+--- !u!114 &114586248724637350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1624019779038674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9695062d4cfaa4d848a2910198d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePerSecond: 2.5
 --- !u!114 &114589753229929350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3539,6 +3579,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114622664393742534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104777532579362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9695062d4cfaa4d848a2910198d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePerSecond: 2.5
 --- !u!114 &114624352229134300
 MonoBehaviour:
   m_ObjectHideFlags: 1

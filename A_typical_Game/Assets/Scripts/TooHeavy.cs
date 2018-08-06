@@ -12,7 +12,7 @@ public class TooHeavy : MonoBehaviour
     {
         if (col.gameObject.tag == "TooHeavy")
         {
-            Debug.Log("TOO HEAVY?");
+            //Debug.Log("TOO HEAVY?");
             canPickUp = true;
         }
     }
