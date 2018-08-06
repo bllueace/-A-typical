@@ -19,12 +19,12 @@ public class PillarCollider : MonoBehaviour {
     private int TimeChangingDecrement;
 
     public bool HasReachedPillar;
-    [SerializeField] CloudsToy Clouds;
+   // [SerializeField] CloudsToy Clouds;
     [SerializeField] Transform SphereFog;
 
     void Start()
     {
-        SphereFog.GetComponent<Renderer>().material.SetColor("_Color", Clouds.MainColor);
+        //SphereFog.GetComponent<Renderer>().material.SetColor("_Color", Clouds.MainColor);
         //Initiate the time the player has stayed in the narrative area
         HasReachedPillar = false;
     }
