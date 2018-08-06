@@ -4065,6 +4065,11 @@ Prefab:
       propertyPath: m_Name
       value: Bird_character
       objectReference: {fileID: 0}
+    - target: {fileID: 114149249806038186, guid: 3a9c396e2eaecc443978f2509e4afa89,
+        type: 2}
+      propertyPath: PickaxeInHand
+      value: 
+      objectReference: {fileID: 1930443016}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9c396e2eaecc443978f2509e4afa89, type: 2}
   m_IsPrefabAsset: 0
@@ -8541,7 +8546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1571, y: -70}
+  m_AnchoredPosition: {x: 942, y: -70}
   m_SizeDelta: {x: 142, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663385026
@@ -17573,7 +17578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1647, y: -15}
+  m_AnchoredPosition: {x: 1018, y: -15}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228705527

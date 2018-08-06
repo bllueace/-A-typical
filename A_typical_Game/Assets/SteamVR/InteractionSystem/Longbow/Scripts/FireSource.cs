@@ -18,7 +18,7 @@ namespace Valve.VR.InteractionSystem
         private float ignitionTime;
         public AudioSource ignitionSound;
         GameObject bird;
-
+        bool lit = false;
         ////-------------------------------------------------
         void Start()
         {
@@ -42,9 +42,14 @@ namespace Valve.VR.InteractionSystem
                 }
             }
 
-            if (Vector3.Distance(transform.position, bird.transform.position) < 2.0f)
+
+            if (!lit)
             {
-                StartBurning();
+                if (Vector3.Distance(transform.position, bird.transform.position) < 2.0f)
+                {
+                    StartBurning();
+                    lit = true;
+                }
             }
             //test code
             if (Input.GetKeyDown("f"))

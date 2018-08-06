@@ -13,7 +13,7 @@ public class Test : MonoBehaviour {
         player = GameObject.Find("Model");
         anim = GetComponent<Animator>();
 
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("Path1"), "time", 20, "easetype", iTween.EaseType.easeOutSine,"orientToPath", true, "lookTime", 0.5,"lookAhead",0.001,"oncomplete", "onPath1Complete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("Path1"), "time", 20, "easetype", iTween.EaseType.linear,"orientToPath", true, "lookTime", 0.5,"lookAhead",0.001,"oncomplete", "onPath1Complete"));
     }
 	
 
@@ -40,7 +40,7 @@ public class Test : MonoBehaviour {
         {
             anim.Play(stateName: "FlyStart");
 
-            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("Path2"), "time", 10, "easetype", iTween.EaseType.easeOutSine, "orientToPath", true,"lookTime", 0.5,"lookAhead",0.001, "oncomplete", "onPath1Complete"));
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("Path2"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true,"lookTime", 0.5,"lookAhead",0.001, "oncomplete", "onPath1Complete"));
 
         }
 

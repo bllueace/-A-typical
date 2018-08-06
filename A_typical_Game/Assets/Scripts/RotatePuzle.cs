@@ -51,26 +51,14 @@ public class RotatePuzle : MonoBehaviour
         //}
     }
 
-    void OnColliderEnter(Collider other)
+    void OnTriggerEnter()
     {
-        //if (blockCorrect == false)
-        //{
-        quatern = Quaternion.AngleAxis(-90.0f, Vector3.up) * quatern;
-
-        //if (other.gameObject.name == "Controller (left)")
-        //    {
-        //        if (transform.localRotation == quatern)
-        //        {
-        //            quatern = Quaternion.AngleAxis(-90.0f, Vector3.up) * quatern;
-        //        }
-        //    }
-        //    if (other.gameObject.name == "Controller (rigth)")
-        //    {
-        //        if (transform.localRotation == quatern)
-        //        {
-        //            quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
-        //        }
-        //    }
-       // }
+        if (piece == false)
+        {
+            if (transform.rotation == quatern)
+            {
+                quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@ public class NarrativeCollider : MonoBehaviour {
         do
         {
             //Check if the player is in the narrative area
-            if (Vector3.Distance(Player.position, this.transform.position) < 1.6f)
+            if (Vector3.Distance(Player.position, this.transform.position) < 3f)
             {
                 //Calculate how much time the player spent in the narrative area and if it it enough
                 HasStayedIn += 1 * Time.deltaTime;
@@ -45,7 +45,7 @@ public class NarrativeCollider : MonoBehaviour {
             }
             //check if the player is going forward the next area
             
-            else if (Vector3.Distance(Player.position, OutOfNarrativeArea.position) < 5.5f) {
+            else if (Vector3.Distance(Player.position, OutOfNarrativeArea.position) < 10f) {
                 NextPath = true;
                 break;
             }

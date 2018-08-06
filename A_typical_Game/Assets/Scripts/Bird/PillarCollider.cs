@@ -6,9 +6,9 @@ public class PillarCollider : MonoBehaviour {
 
     [SerializeField] Transform Player; //Is Camera(head)
 
-    public Color CloudColor;
-    public Color MainColor;
-    public Color SecondColor;
+    //public Color CloudColor;
+    //public Color MainColor;
+    //public Color SecondColor;
     public int TintStrength;
     public int TimeChanging;
 
@@ -40,7 +40,7 @@ public class PillarCollider : MonoBehaviour {
                 TimeChangingDecrement = TimeChanging;
                 HasReachedPillar = true;
                 //Start the changing environment by having darker clouds
-                StartCoroutine(FromSunnyToCloudly()); //For the cloud and the sphere
+               // StartCoroutine(FromSunnyToCloudly()); //For the cloud and the sphere
                 break;
             }
             yield return null;
@@ -49,49 +49,49 @@ public class PillarCollider : MonoBehaviour {
         StartCoroutine(caveEntrance.IsInCaveArea()); //Wait for the next path
     }
 
-    IEnumerator FromSunnyToCloudly()
-    {
+    //IEnumerator FromSunnyToCloudly()
+    //{
 
-        AlphaSphere = (1 - SphereFog.GetComponent<Renderer>().material.GetColor("_Color").a) / TimeChanging;
-        Color Difference; //Use to see how much float should be added to reach the next color
+    //    AlphaSphere = (1 - SphereFog.GetComponent<Renderer>().material.GetColor("_Color").a) / TimeChanging;
+    //    Color Difference; //Use to see how much float should be added to reach the next color
 
-        Difference = CloudColor - Clouds.CloudColor;
-        Color IncrementCloud = new Color(Difference.r / TimeChanging, Difference.g / TimeChanging, Difference.b / TimeChanging, Difference.a / TimeChanging);
+    //    Difference = CloudColor - Clouds.CloudColor;
+    //    Color IncrementCloud = new Color(Difference.r / TimeChanging, Difference.g / TimeChanging, Difference.b / TimeChanging, Difference.a / TimeChanging);
 
-        Difference = MainColor - Clouds.MainColor;
-        Color IncrementMain = new Color(Difference.r / TimeChanging, Difference.g / TimeChanging, Difference.b / TimeChanging, Difference.a / TimeChanging);
-
-
-        Difference = SecondColor - Clouds.SecondColor;
-        Color IncrementSecond = new Color(Difference.r / TimeChanging, Difference.g / TimeChanging, Difference.b / TimeChanging, Difference.a / TimeChanging);
-
-        Clouds.TintStrength = TintStrength;
-
-        do
-        {
+    //    Difference = MainColor - Clouds.MainColor;
+    //    Color IncrementMain = new Color(Difference.r / TimeChanging, Difference.g / TimeChanging, Difference.b / TimeChanging, Difference.a / TimeChanging);
 
 
-            Clouds.CloudColor = new Color(Clouds.CloudColor.r + IncrementCloud.r, Clouds.CloudColor.g + IncrementCloud.g,
-                Clouds.CloudColor.b + IncrementCloud.b, Clouds.CloudColor.a + IncrementCloud.a);
+    //    Difference = SecondColor - Clouds.SecondColor;
+    //    Color IncrementSecond = new Color(Difference.r / TimeChanging, Difference.g / TimeChanging, Difference.b / TimeChanging, Difference.a / TimeChanging);
 
-            Clouds.MainColor = new Color(Clouds.MainColor.r + IncrementMain.r, Clouds.MainColor.g + IncrementMain.g,
-                Clouds.MainColor.b + IncrementMain.b, Clouds.MainColor.a + IncrementMain.a);
+    //    Clouds.TintStrength = TintStrength;
 
-            SphereFog.GetComponent<Renderer>().material.SetColor("_Color", new Color(Clouds.MainColor.r, Clouds.MainColor.g,
-                                                                                     Clouds.MainColor.b,
-                                                                                     SphereFog.GetComponent<Renderer>().material.GetColor("_Color").a + AlphaSphere));
+    //    do
+    //    {
 
-            Clouds.SecondColor = new Color(Clouds.SecondColor.r + IncrementSecond.r, Clouds.SecondColor.g + IncrementSecond.g,
-                Clouds.SecondColor.b + IncrementSecond.b, Clouds.SecondColor.a + IncrementSecond.a);
 
-            //Clouds.SecondColor = Color.Lerp(Clouds.SecondColor, IncrementSecond, TimeChanging);
+    //        Clouds.CloudColor = new Color(Clouds.CloudColor.r + IncrementCloud.r, Clouds.CloudColor.g + IncrementCloud.g,
+    //            Clouds.CloudColor.b + IncrementCloud.b, Clouds.CloudColor.a + IncrementCloud.a);
 
-            TimeChangingDecrement--;
-            yield return new WaitForSeconds(0.1f);
+    //        Clouds.MainColor = new Color(Clouds.MainColor.r + IncrementMain.r, Clouds.MainColor.g + IncrementMain.g,
+    //            Clouds.MainColor.b + IncrementMain.b, Clouds.MainColor.a + IncrementMain.a);
 
-        } while (TimeChangingDecrement > 0);
-        //print("finished");
-    }
+    //        SphereFog.GetComponent<Renderer>().material.SetColor("_Color", new Color(Clouds.MainColor.r, Clouds.MainColor.g,
+    //                                                                                 Clouds.MainColor.b,
+    //                                                                                 SphereFog.GetComponent<Renderer>().material.GetColor("_Color").a + AlphaSphere));
+
+    //        Clouds.SecondColor = new Color(Clouds.SecondColor.r + IncrementSecond.r, Clouds.SecondColor.g + IncrementSecond.g,
+    //            Clouds.SecondColor.b + IncrementSecond.b, Clouds.SecondColor.a + IncrementSecond.a);
+
+    //        //Clouds.SecondColor = Color.Lerp(Clouds.SecondColor, IncrementSecond, TimeChanging);
+
+    //        TimeChangingDecrement--;
+    //        yield return new WaitForSeconds(0.1f);
+
+    //    } while (TimeChangingDecrement > 0);
+    //    //print("finished");
+    //}
 
     //The part bellow can't work because the colliders block from teleporting
     /*void OnTriggerEnter(Collider c)
