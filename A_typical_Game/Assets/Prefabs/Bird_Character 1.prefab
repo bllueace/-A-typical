@@ -440,12 +440,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4238490803164664}
   - component: {fileID: 95270463235131016}
-  - component: {fileID: 114149249806038186}
   - component: {fileID: 114418721018199048}
   - component: {fileID: 114655648762539072}
   - component: {fileID: 114740782180323816}
   - component: {fileID: 114090475749825038}
   - component: {fileID: 114752526552919788}
+  - component: {fileID: 114136291745603082}
   m_Layer: 0
   m_Name: Bird_Character 1
   m_TagString: NPC
@@ -1947,7 +1947,7 @@ MonoBehaviour:
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
---- !u!114 &114149249806038186
+--- !u!114 &114136291745603082
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1955,14 +1955,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486303877752020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b54137a6a60554180df4b9ead57050, type: 3}
+  m_Script: {fileID: 11500000, guid: 9995a64b79719f04682138b241c01fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColliderNarrativeArea: {fileID: 0}
-  ColliderPillar: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  Bird: {fileID: 4238490803164664}
   PickaxeInHand: {fileID: 0}
-  BlockingRockCaveEntrancedestroyed: 0
-  ColliderCaveEntrance: {fileID: 0}
+  currentPath: 0
+  leavingNarative: {fileID: 0}
 --- !u!114 &114418721018199048
 MonoBehaviour:
   m_ObjectHideFlags: 1
