@@ -12,20 +12,21 @@ public class CheckPuzleASolved : MonoBehaviour
     public Texture T_emi_lineBottomRight;
 
     public bool puzleSolved;
+    public GameObject floor;
 
     // Use this for initialization
     void Start()
     {
-        GameObject p1 = GameObject.Find("Cube_A_0");
+        GameObject p1 = GameObject.Find("puzzleBlock_01");
         piece1 = p1.GetComponent<RotatePuzle>();
 
-        GameObject p2 = GameObject.Find("Cube_A_1");
+        GameObject p2 = GameObject.Find("puzzleBlock_02");
         piece2 = p2.GetComponent<RotatePuzle>();
 
-        GameObject p3 = GameObject.Find("Cube_A_2");
+        GameObject p3 = GameObject.Find("puzzleBlock_03");
         piece3 = p3.GetComponent<RotatePuzle>();
 
-        GameObject p4 = GameObject.Find("Cube_A_3");
+        GameObject p4 = GameObject.Find("puzzleBlock_04");
         piece4 = p4.GetComponent<RotatePuzle>();
     }
 
@@ -39,21 +40,27 @@ public class CheckPuzleASolved : MonoBehaviour
             {
                 Debug.Log("Puzle A Solved!");
 
-                piece1.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                piece2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                piece3.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                piece4.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                piece1.GetComponent<Renderer>().material.SetInt("_EmissionIntensity",2);
+                piece2.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
+                piece3.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
+                piece4.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
                 puzleSolved = true;
 
+                piece1.GetComponent<RotatePuzle>().enabled = false;
+                piece2.GetComponent<RotatePuzle>().enabled = false;
+                piece3.GetComponent<RotatePuzle>().enabled = false;
+                piece4.GetComponent<RotatePuzle>().enabled = false;
 
-                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", T_emi_lineBottomRight);
+
+
+                floor.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", T_emi_lineBottomRight);
 
             }
             else
             {
-                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", null);
+                floor.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", null);
             }
-           
+
 
         }
     }

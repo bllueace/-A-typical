@@ -13,6 +13,7 @@ public class CheckPuzleBSolved : MonoBehaviour
 
     public bool puzleSolved;
 
+    public GameObject floor;
 
     // Use this for initialization
     void Start()
@@ -39,20 +40,25 @@ public class CheckPuzleBSolved : MonoBehaviour
             {
                 Debug.Log("Puzle B Solved!");
 
-                piece1.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                piece2.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                piece3.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                piece4.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                piece1.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
+                piece2.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
+                piece3.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
+                piece4.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
+
+                piece1.GetComponent<RotatePuzle>().enabled = false;
+                piece2.GetComponent<RotatePuzle>().enabled = false;
+                piece3.GetComponent<RotatePuzle>().enabled = false;
+                piece4.GetComponent<RotatePuzle>().enabled = false;
 
                 puzleSolved = true;
 
-                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Top_Right", T_emi_lineTopRight);
+                floor.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Top_Right", T_emi_lineTopRight);
 
             }
 
             else
             {
-                transform.parent.parent.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Top_Right", null);
+                floor.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Top_Right", null);
             }
         }
     }
