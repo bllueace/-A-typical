@@ -446,6 +446,8 @@ GameObject:
   - component: {fileID: 114090475749825038}
   - component: {fileID: 114752526552919788}
   - component: {fileID: 114136291745603082}
+  - component: {fileID: 114504657468024252}
+  - component: {fileID: 114470543422582478}
   m_Layer: 0
   m_Name: Bird_Character 1
   m_TagString: NPC
@@ -1946,7 +1948,7 @@ MonoBehaviour:
   nodeCount: 6
   initialized: 1
   initialName: New Path 1
-  pathVisible: 1
+  pathVisible: 0
 --- !u!114 &114136291745603082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1962,6 +1964,7 @@ MonoBehaviour:
   rightHand: {fileID: 0}
   Bird: {fileID: 4238490803164664}
   PickaxeInHand: {fileID: 0}
+  holeFull: {fileID: 0}
   currentPath: 0
   leavingNarative: {fileID: 0}
 --- !u!114 &114418721018199048
@@ -1994,6 +1997,52 @@ MonoBehaviour:
   initialized: 1
   initialName: New Path 2
   pathVisible: 0
+--- !u!114 &114470543422582478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486303877752020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: FromLoopToPuzzleA
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -4.43564, y: 4.7385488, z: -12.772203}
+  - {x: -4.2633457, y: 4.761098, z: -15.993184}
+  - {x: -5.848414, y: 5.7979665, z: -28.166235}
+  - {x: -6.895379, y: 5.7444077, z: -31.435835}
+  - {x: -4.055303, y: 5.6676292, z: -33.09852}
+  nodeCount: 5
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
+--- !u!114 &114504657468024252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486303877752020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: FlyAroundHole
+  pathColor: {r: 0.6792453, g: 0.34368697, b: 0.09291565, a: 1}
+  nodes:
+  - {x: -5.1517706, y: 5.1335745, z: -10.167629}
+  - {x: -5.0411515, y: 5.1449904, z: -11.752998}
+  - {x: -3.5736966, y: 4.476364, z: -12.651548}
+  - {x: -3.7177567, y: 4.456031, z: -10.41278}
+  - {x: -4.6673303, y: 5.234864, z: -9.739848}
+  nodeCount: 5
+  initialized: 1
+  initialName: New Path 3
+  pathVisible: 1
 --- !u!114 &114655648762539072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2058,16 +2107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: FromCaveentranceToPuzzleA
+  pathName: FromCaveEnterenceToLoop
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: -2.3403442, y: 4.1657467, z: -6.782764}
-  - {x: -4.9207788, y: 5.1013093, z: -5.7564936}
-  - {x: -4.7924175, y: 4.81941, z: -11.664252}
-  - {x: -4.6356754, y: 4.8728848, z: -19.048601}
-  - {x: -4.671085, y: 5.2802525, z: -24.317806}
-  - {x: -3.9673588, y: 5.6786833, z: -32.953613}
-  nodeCount: 6
+  - {x: -4.469957, y: 5.445938, z: -7.2961}
+  - {x: -4.912596, y: 5.133574, z: -8.560789}
+  nodeCount: 3
   initialized: 1
   initialName: New Path 1
   pathVisible: 1

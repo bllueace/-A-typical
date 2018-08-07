@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class FillThePit : MonoBehaviour {
 
-
     public int rockCount;
     public Rigidbody Rock;
-
+    public bool filled = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -31,6 +30,11 @@ public class FillThePit : MonoBehaviour {
         rockCount++;
 
         if(rockCount == 5)
+        {
+            filled = true;
+        }
+
+        if (rockCount == 5)
         {
             GameObject go = GameObject.Find("BlockPitTeleport");
 
