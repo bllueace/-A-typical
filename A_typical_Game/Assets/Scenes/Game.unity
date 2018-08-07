@@ -4040,7 +4040,7 @@ Prefab:
         type: 2}
       propertyPath: leftHand
       value: 
-      objectReference: {fileID: 1235888309}
+      objectReference: {fileID: 1359152139}
     - target: {fileID: 114136291745603082, guid: 3a9c396e2eaecc443978f2509e4afa89,
         type: 2}
       propertyPath: rightHand
@@ -8342,7 +8342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1151, y: -70}
+  m_AnchoredPosition: {x: 942, y: -70}
   m_SizeDelta: {x: 142, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663385026
@@ -17262,7 +17262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1227, y: -15}
+  m_AnchoredPosition: {x: 1018, y: -15}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228705527
@@ -17623,11 +17623,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1235888291}
   m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
---- !u!4 &1235888309 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 458974, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1235888291}
 --- !u!65 &1235888315
 BoxCollider:
   m_ObjectHideFlags: 0
