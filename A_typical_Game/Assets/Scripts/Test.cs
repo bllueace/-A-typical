@@ -10,6 +10,8 @@ public class Test : MonoBehaviour {
     [SerializeField] Transform Bird; //Is Camera(head)
     [SerializeField] Transform PickaxeInHand; // Script of the pickaxe in the hand
 
+    public GameObject holeFull;
+
     public int currentPath = 0;
     public GameObject leavingNarative;
     bool flying = false;
@@ -28,6 +30,16 @@ public class Test : MonoBehaviour {
         //anim.SetBool("IDLE", true);
 
         anim.Play(stateName: "FlyEnd");
+        currentPath++;
+        flying = false;
+        //Debug.Log("I have arived! *chirp* *chirp*");
+    }
+
+    void onPathCompleteTwo()
+    {
+        //anim.SetBool("IDLE", true);
+
+        anim.Play(stateName: "Fly");
         currentPath++;
         flying = false;
         //Debug.Log("I have arived! *chirp* *chirp*");
@@ -58,7 +70,7 @@ public class Test : MonoBehaviour {
 
         if (currentPath == 2 && !flying)
         {
-            if ((Vector3.Distance(leftHand.position, Bird.transform.position) < 3f) || (Vector3.Distance(rightHand.position, Bird.transform.position) < 3f))
+            if ((Vector3.Distance(leftHand.position, Bird.transform.position) < 4f) || (Vector3.Distance(rightHand.position, Bird.transform.position) < 4f))
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
@@ -79,36 +91,48 @@ public class Test : MonoBehaviour {
 
         if (currentPath == 4 && !flying)
         {
-            if ((Vector3.Distance(leftHand.position, PickaxeInHand.transform.position) < 3f) || (Vector3.Distance(rightHand.position, PickaxeInHand.transform.position) < 3f))
+            if ((Vector3.Distance(leftHand.position, Bird.transform.position) < 2f) || (Vector3.Distance(rightHand.position, Bird.transform.position) < 2f))
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromCaveentranceToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromCaveEnterenceToLoop"), "time", 4, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathCompleteTwo"));
             }
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        if (Input.GetKeyDown("space"))
+        if(currentPath == 5)
         {
-            anim.Play(stateName: "FlyStart");
-
-            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("Path2"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true,"lookTime", 0.5,"lookAhead",0.001, "oncomplete", "onPath1Complete"));
-
+            flying = true;
+            anim.Play(stateName: "Fly");
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 10,"looptype","loop", "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001));
         }
+
+
+        if(holeFull.GetComponent<FillThePit>().rockCount == 5)
+        {
+            flying = true;
+            anim.Play(stateName: "Fly");
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromLoopToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    anim.Play(stateName: "FlyStart");
+
+        //    //iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 3, "looptype", "loop", "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001));
+        //    iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 5, "loopType", "loop","easetype", iTween.EaseType.linear, "orientToPath", true, "delay", 0));
+        //}
 
     }
 }
