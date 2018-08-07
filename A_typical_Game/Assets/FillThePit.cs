@@ -29,16 +29,13 @@ public class FillThePit : MonoBehaviour {
     {
         rockCount++;
 
-        if(rockCount == 5)
-        {
-            filled = true;
-        }
-
+    
         if (rockCount == 5)
         {
+            //rockCount++;
             GameObject go = GameObject.Find("BlockPitTeleport");
 
-            Destroy(go.gameObject);
+            //Destroy(go.GetComponent<BoxCollider>());
         }
 
     }

@@ -21,7 +21,7 @@ public class Test : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
 
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPitToNarrative"), "time", 4, "easetype", iTween.EaseType.linear,"orientToPath", true, "lookTime", 0.5,"lookAhead",0.001,"oncomplete", "onPathComplete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPitToNarrative"), "time", 20, "easetype", iTween.EaseType.linear,"orientToPath", true, "lookTime", 0.5,"lookAhead",0.001,"oncomplete", "onPathComplete"));
     }
 	
 
@@ -42,12 +42,18 @@ public class Test : MonoBehaviour {
         anim.Play(stateName: "Fly");
        // currentPath++;
 
-        flying = true;
+        flying = false;
         //anim.Play(stateName: "Fly");
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 4, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathCompleteTwo"));
 
         //flying = false;
         //Debug.Log("I have arived! *chirp* *chirp*");
+    }
+
+    void onPathCompleteThree()
+    {
+        flying = true;
+        anim.Play(stateName: "FlyEnd");
     }
 
     // Update is called once per frame
@@ -63,13 +69,13 @@ public class Test : MonoBehaviour {
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 3, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
             }
             else if (Vector3.Distance(rightHand.position, Bird.transform.position) > 5f)
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 3, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
             }
         }
 
@@ -79,7 +85,7 @@ public class Test : MonoBehaviour {
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPillarToPickaxe"), "time", 3, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPillarToPickaxe"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
             }
         }
 
@@ -89,7 +95,7 @@ public class Test : MonoBehaviour {
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPickaxeToCaventrance"), "time", 3, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPickaxeToCaventrance"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
             }
 
         }
@@ -105,21 +111,22 @@ public class Test : MonoBehaviour {
 
         }
 
-        //if(currentPath == 5)
-        //{
-        //    flying = true;
-        //    anim.Play(stateName: "Fly");
-        //    iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 4, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
-
-        //    //iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 3,"looptype","loop", "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001));
-        //}
-
-
-        if(holeFull.GetComponent<FillThePit>().rockCount == 4)
+        if (currentPath == 5)
         {
             flying = true;
             anim.Play(stateName: "Fly");
-            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromLoopToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 4, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
+
+            //iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 3,"looptype","loop", "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001));
+        }
+
+        //int count = holeFull.GetComponent<FillThePit>().rockCount;
+
+        if (holeFull.GetComponent<FillThePit>().rockCount == 5 && !flying )
+        {
+            flying = true;
+            anim.Play(stateName: "Fly");
+            iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromLoopToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathCompleteThree"));
         }
 
 
