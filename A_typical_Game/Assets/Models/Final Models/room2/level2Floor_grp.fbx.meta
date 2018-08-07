@@ -1,16 +1,80 @@
 fileFormatVersion: 2
-guid: 9301e7fce1110934db9c543118347914
+guid: ae52982ca705a174e9853750052bd825
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: level2Base
-    100002: //RootNode
-    400000: level2Base
-    400002: //RootNode
+    100000: level2Exit_grp
+    100002: level2Floor
+    100004: level2Floor_grp
+    100006: //RootNode
+    100008: level2Wall_01
+    100010: level2Wall_02
+    100012: level2Wall_03
+    100014: level2Wall_04
+    100016: level2Wall_05
+    100018: level2Wall_06
+    100020: level2Wall_07
+    100022: level2Wall_08
+    100024: level2Wall_09
+    100026: level2Wall_10
+    100028: level2Wall_11
+    100030: level2Wall_12
+    400000: level2Exit_grp
+    400002: level2Floor
+    400004: //RootNode
+    400006: level2Floor_grp
+    400008: level2Wall_01
+    400010: level2Wall_02
+    400012: level2Wall_03
+    400014: level2Wall_04
+    400016: level2Wall_05
+    400018: level2Wall_06
+    400020: level2Wall_07
+    400022: level2Wall_08
+    400024: level2Wall_09
+    400026: level2Wall_10
+    400028: level2Wall_11
+    400030: level2Wall_12
     2100000: lambert1
-    2300000: level2Base
-    3300000: level2Base
-    4300000: level2Base
+    2300000: level2Floor
+    2300002: level2Wall_01
+    2300004: level2Wall_02
+    2300006: level2Wall_03
+    2300008: level2Wall_04
+    2300010: level2Wall_05
+    2300012: level2Wall_06
+    2300014: level2Wall_07
+    2300016: level2Wall_08
+    2300018: level2Wall_09
+    2300020: level2Wall_10
+    2300022: level2Wall_11
+    2300024: level2Wall_12
+    3300000: level2Floor
+    3300002: level2Wall_01
+    3300004: level2Wall_02
+    3300006: level2Wall_03
+    3300008: level2Wall_04
+    3300010: level2Wall_05
+    3300012: level2Wall_06
+    3300014: level2Wall_07
+    3300016: level2Wall_08
+    3300018: level2Wall_09
+    3300020: level2Wall_10
+    3300022: level2Wall_11
+    3300024: level2Wall_12
+    4300000: level2Floor
+    4300002: level2Wall_01
+    4300004: level2Wall_02
+    4300006: level2Wall_03
+    4300008: level2Wall_04
+    4300010: level2Wall_05
+    4300012: level2Wall_06
+    4300014: level2Wall_07
+    4300016: level2Wall_08
+    4300018: level2Wall_09
+    4300020: level2Wall_10
+    4300022: level2Wall_11
+    4300024: level2Wall_12
   externalObjects: {}
   materials:
     importMaterials: 1
