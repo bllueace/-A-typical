@@ -7,6 +7,8 @@ public class CaveCollapse : MonoBehaviour {
     private AudioSource source;
     [SerializeField] Transform Player;
     public GameObject statue, beak, statueFallen, tpBlock;
+
+    bool hasColapset;
     // Use this for initialization
     void Start () {
         source = GetComponent<AudioSource>();
@@ -17,13 +19,19 @@ public class CaveCollapse : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Vector3.Distance(Player.position, this.transform.position) < 2)
+
+        if (!hasColapset)
         {
-            source.PlayOneShot(colapse);
-            statue.SetActive(false);
-            beak.SetActive(true);
-            statueFallen.SetActive(true);
-            tpBlock.SetActive(true);
+            if (Vector3.Distance(Player.position, this.transform.position) < 2)
+            {
+                source.PlayOneShot(colapse);
+                statue.SetActive(false);
+                beak.SetActive(true);
+                statueFallen.SetActive(true);
+                tpBlock.SetActive(true);
+
+                hasColapset = true;
+            }
         }
     }
 
