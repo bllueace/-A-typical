@@ -17,16 +17,16 @@ public class CheckPuzleCSolved : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameObject p1 = GameObject.Find("Cube_C_0");
+        GameObject p1 = GameObject.Find("puzzleBlock_01 2");
         piece1 = p1.GetComponent<RotatePuzle>();
 
-        GameObject p2 = GameObject.Find("Cube_C_1");
+        GameObject p2 = GameObject.Find("puzzleBlock_02 2");
         piece2 = p2.GetComponent<RotatePuzle>();
 
-        GameObject p3 = GameObject.Find("Cube_C_2");
+        GameObject p3 = GameObject.Find("puzzleBlock_03 2");
         piece3 = p3.GetComponent<RotatePuzle>();
 
-        GameObject p4 = GameObject.Find("Cube_C_3");
+        GameObject p4 = GameObject.Find("puzzleBlock_04 2");
         piece4 = p4.GetComponent<RotatePuzle>();
     }
 

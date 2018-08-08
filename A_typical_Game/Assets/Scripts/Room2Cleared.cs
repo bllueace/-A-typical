@@ -13,6 +13,8 @@ public class Room2Cleared : MonoBehaviour
     public Texture T_emi_Circles;
     public Texture T_emi_lineDoor;
 
+    public bool solved;
+
     // Use this for initialization
     void Start()
     {
@@ -67,6 +69,7 @@ public class Room2Cleared : MonoBehaviour
             this.GetComponent<Renderer>().material.SetTexture("_Emi_circles", T_emi_Circles);
            this.GetComponent<Renderer>().material.SetTexture("_Emi_Line_door", T_emi_lineDoor);
 
+            solved = true;
             Debug.Log("All solved!");
         }
 
