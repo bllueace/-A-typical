@@ -21,6 +21,7 @@ TagManager:
   - TeleportIgnore
   - Puzzle
   - CloudsToy
+  - tempTag
   layers:
   - Default
   - TransparentFX
@@ -34,9 +35,9 @@ TagManager:
   - CloudsToy
   - RightHand
   - LeftHand
-  - Puzzle
-  - 
-  - 
+  - Touch
+  - Pickaxe
+  - IgnorePickaxe
   - 
   - 
   - 

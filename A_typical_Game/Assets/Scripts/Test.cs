@@ -61,7 +61,7 @@ public class Test : MonoBehaviour {
 
         dist = Vector3.Distance(rightHand.position, Bird.transform.position);
 
-        Debug.Log("Distance to bird is: "+ dist);
+        //Debug.Log("Distance to bird is: "+ dist);
 
         if (currentPath == 1 && flying == false)
         {
