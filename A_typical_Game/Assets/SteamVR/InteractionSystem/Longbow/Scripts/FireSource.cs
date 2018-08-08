@@ -23,7 +23,7 @@ namespace Valve.VR.InteractionSystem
         void Start()
         {
 
-            bird = GameObject.Find("Bird_character");//needs to be changed to "BIRD" object later on
+            bird = GameObject.Find("Trailer");//needs to be changed to "BIRD" object later on
         }
 
         //-------------------------------------------------
@@ -45,7 +45,7 @@ namespace Valve.VR.InteractionSystem
 
             if (!lit)
             {
-                if (Vector3.Distance(transform.position, bird.transform.position) < 2.0f)
+                if (Vector3.Distance(transform.position, bird.transform.position) < 5.0f)
                 {
                     StartBurning();
                     lit = true;
