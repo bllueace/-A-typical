@@ -45,6 +45,8 @@ public class RotatePuzle : MonoBehaviour
         if (transform.localRotation == quatern)
         {
             quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+            source.PlayOneShot(turning);
+
         }
     }
 

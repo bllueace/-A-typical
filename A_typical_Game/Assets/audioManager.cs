@@ -24,7 +24,8 @@ public class audioManager : MonoBehaviour
     public GameObject puzzleSolved;
 
     bool climbed;
-    bool incave,incave2;
+    bool incave;
+    bool incave2;
     bool puzzleDone;
 
     void Start()
@@ -80,7 +81,7 @@ public class audioManager : MonoBehaviour
 
                 audio.clip = puzzleClip;
                 audio.Play();
-                incave = true;
+                incave2 = true;
             }
         }
 
