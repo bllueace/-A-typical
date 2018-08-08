@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: 8b4b9a489940fe54fa7b9d582a9ad47d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: boulder_01
+    100002: boulder_01 1
+    100004: boulder_01 10
+    100006: boulder_01 2
+    100008: boulder_01 3
+    100010: boulder_01 4
+    100012: boulder_01 5
+    100014: boulder_01 6
+    100016: boulder_01 7
+    100018: boulder_01 8
+    100020: boulder_01 9
+    100022: boulder_02
+    100024: boulder_02 1
+    100026: boulder_02 10
+    100028: boulder_02 2
+    100030: boulder_02 3
+    100032: boulder_02 4
+    100034: boulder_02 5
+    100036: boulder_02 6
+    100038: boulder_02 7
+    100040: boulder_02 8
+    100042: boulder_02 9
+    100044: boulder_03
+    100046: boulder_03 1
+    100048: boulder_03 10
+    100050: boulder_03 2
+    100052: boulder_03 3
+    100054: boulder_03 4
+    100056: boulder_03 5
+    100058: boulder_03 6
+    100060: boulder_03 7
+    100062: boulder_03 8
+    100064: boulder_03 9
+    100066: boulder_04
+    100068: boulder_04 1
+    100070: boulder_04 10
+    100072: boulder_04 2
+    100074: boulder_04 3
+    100076: boulder_04 4
+    100078: boulder_04 5
+    100080: boulder_04 6
+    100082: boulder_04 7
+    100084: boulder_04 8
+    100086: boulder_04 9
+    100088: boulder_08_grp
+    100090: boulder_09_grp
+    100092: boulder_10_grp
+    100094: boulder_11_grp
+    100096: boulder_12_grp
+    100098: boulder_13_grp
+    100100: boulder_14_grp
+    100102: boulder_15_grp
+    100104: boulder_21_grp
+    100106: boulder_24_grp
+    100108: boulder_25_grp
+    100110: level2BoulderBrkn_grp
+    100112: //RootNode
+    400000: boulder_01
+    400002: boulder_01 1
+    400004: boulder_01 10
+    400006: boulder_01 2
+    400008: boulder_01 3
+    400010: boulder_01 4
+    400012: boulder_01 5
+    400014: boulder_01 6
+    400016: boulder_01 7
+    400018: boulder_01 8
+    400020: boulder_01 9
+    400022: boulder_02
+    400024: boulder_02 1
+    400026: boulder_02 10
+    400028: boulder_02 2
+    400030: boulder_02 3
+    400032: boulder_02 4
+    400034: boulder_02 5
+    400036: boulder_02 6
+    400038: boulder_02 7
+    400040: boulder_02 8
+    400042: boulder_02 9
+    400044: boulder_03
+    400046: boulder_03 1
+    400048: boulder_03 10
+    400050: boulder_03 2
+    400052: boulder_03 3
+    400054: boulder_03 4
+    400056: boulder_03 5
+    400058: boulder_03 6
+    400060: boulder_03 7
+    400062: boulder_03 8
+    400064: boulder_03 9
+    400066: boulder_04
+    400068: boulder_04 1
+    400070: boulder_04 10
+    400072: boulder_04 2
+    400074: boulder_04 3
+    400076: boulder_04 4
+    400078: boulder_04 5
+    400080: boulder_04 6
+    400082: boulder_04 7
+    400084: boulder_04 8
+    400086: boulder_04 9
+    400088: boulder_08_grp
+    400090: boulder_09_grp
+    400092: boulder_10_grp
+    400094: boulder_11_grp
+    400096: boulder_12_grp
+    400098: boulder_13_grp
+    400100: boulder_14_grp
+    400102: boulder_15_grp
+    400104: boulder_21_grp
+    400106: boulder_24_grp
+    400108: boulder_25_grp
+    400110: level2BoulderBrkn_grp
+    400112: //RootNode
+    2100000: lambert1
+    2300000: boulder_01
+    2300002: boulder_01 1
+    2300004: boulder_01 10
+    2300006: boulder_01 2
+    2300008: boulder_01 3
+    2300010: boulder_01 4
+    2300012: boulder_01 5
+    2300014: boulder_01 6
+    2300016: boulder_01 7
+    2300018: boulder_01 8
+    2300020: boulder_01 9
+    2300022: boulder_02
+    2300024: boulder_02 1
+    2300026: boulder_02 10
+    2300028: boulder_02 2
+    2300030: boulder_02 3
+    2300032: boulder_02 4
+    2300034: boulder_02 5
+    2300036: boulder_02 6
+    2300038: boulder_02 7
+    2300040: boulder_02 8
+    2300042: boulder_02 9
+    2300044: boulder_03
+    2300046: boulder_03 1
+    2300048: boulder_03 10
+    2300050: boulder_03 2
+    2300052: boulder_03 3
+    2300054: boulder_03 4
+    2300056: boulder_03 5
+    2300058: boulder_03 6
+    2300060: boulder_03 7
+    2300062: boulder_03 8
+    2300064: boulder_03 9
+    2300066: boulder_04
+    2300068: boulder_04 1
+    2300070: boulder_04 10
+    2300072: boulder_04 2
+    2300074: boulder_04 3
+    2300076: boulder_04 4
+    2300078: boulder_04 5
+    2300080: boulder_04 6
+    2300082: boulder_04 7
+    2300084: boulder_04 8
+    2300086: boulder_04 9
+    3300000: boulder_01
+    3300002: boulder_01 1
+    3300004: boulder_01 10
+    3300006: boulder_01 2
+    3300008: boulder_01 3
+    3300010: boulder_01 4
+    3300012: boulder_01 5
+    3300014: boulder_01 6
+    3300016: boulder_01 7
+    3300018: boulder_01 8
+    3300020: boulder_01 9
+    3300022: boulder_02
+    3300024: boulder_02 1
+    3300026: boulder_02 10
+    3300028: boulder_02 2
+    3300030: boulder_02 3
+    3300032: boulder_02 4
+    3300034: boulder_02 5
+    3300036: boulder_02 6
+    3300038: boulder_02 7
+    3300040: boulder_02 8
+    3300042: boulder_02 9
+    3300044: boulder_03
+    3300046: boulder_03 1
+    3300048: boulder_03 10
+    3300050: boulder_03 2
+    3300052: boulder_03 3
+    3300054: boulder_03 4
+    3300056: boulder_03 5
+    3300058: boulder_03 6
+    3300060: boulder_03 7
+    3300062: boulder_03 8
+    3300064: boulder_03 9
+    3300066: boulder_04
+    3300068: boulder_04 1
+    3300070: boulder_04 10
+    3300072: boulder_04 2
+    3300074: boulder_04 3
+    3300076: boulder_04 4
+    3300078: boulder_04 5
+    3300080: boulder_04 6
+    3300082: boulder_04 7
+    3300084: boulder_04 8
+    3300086: boulder_04 9
+    4300000: boulder_01
+    4300002: boulder_02
+    4300004: boulder_03
+    4300006: boulder_04
+    4300008: boulder_01
+    4300010: boulder_02
+    4300012: boulder_03
+    4300014: boulder_04
+    4300016: boulder_01
+    4300018: boulder_02
+    4300020: boulder_03
+    4300022: boulder_04
+    4300024: boulder_01
+    4300026: boulder_02
+    4300028: boulder_03
+    4300030: boulder_04
+    4300032: boulder_01
+    4300034: boulder_02
+    4300036: boulder_03
+    4300038: boulder_04
+    4300040: boulder_01
+    4300042: boulder_02
+    4300044: boulder_03
+    4300046: boulder_04
+    4300048: boulder_01
+    4300050: boulder_02
+    4300052: boulder_03
+    4300054: boulder_04
+    4300056: boulder_01
+    4300058: boulder_02
+    4300060: boulder_03
+    4300062: boulder_04
+    4300064: boulder_01
+    4300066: boulder_02
+    4300068: boulder_03
+    4300070: boulder_04
+    4300072: boulder_01
+    4300074: boulder_02
+    4300076: boulder_03
+    4300078: boulder_04
+    4300080: boulder_01
+    4300082: boulder_02
+    4300084: boulder_03
+    4300086: boulder_04
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
