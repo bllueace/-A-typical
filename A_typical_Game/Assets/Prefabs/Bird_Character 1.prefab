@@ -448,6 +448,8 @@ GameObject:
   - component: {fileID: 114136291745603082}
   - component: {fileID: 114504657468024252}
   - component: {fileID: 114470543422582478}
+  - component: {fileID: 82865912071159822}
+  - component: {fileID: 114475308443695534}
   m_Layer: 0
   m_Name: Bird_Character 1
   m_TagString: NPC
@@ -1907,6 +1909,92 @@ Transform:
   m_Father: {fileID: 4271335291236422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82865912071159822
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486303877752020}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a4fa1d3f16208954cb464a25e0866c7e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 1
+  SpatializePostEffects: 1
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95270463235131016
 Animator:
   serializedVersion: 3
@@ -1940,11 +2028,11 @@ MonoBehaviour:
   pathColor: {r: 1, g: 0.59751904, b: 0, a: 1}
   nodes:
   - {x: -1.644222, y: 3.9380147, z: 0.31119865}
-  - {x: -5.0475254, y: 4.6518927, z: -1.5661633}
+  - {x: -4.709639, y: 4.6518927, z: -1.5661633}
   - {x: -4.409771, y: 5.535362, z: -2.7576826}
   - {x: -4.3010087, y: 4.834915, z: -4.417923}
   - {x: -1.9055266, y: 4.594157, z: -5.462867}
-  - {x: -2.3403442, y: 4.1657467, z: -6.782764}
+  - {x: -3.1338913, y: 4.598973, z: -8.211077}
   nodeCount: 6
   initialized: 1
   initialName: New Path 1
@@ -1990,13 +2078,13 @@ MonoBehaviour:
   - {x: -2.409751, y: 2.5277567, z: 8.138193}
   - {x: -5.210533, y: 3.2162695, z: 8.128721}
   - {x: -6.536999, y: 2.719716, z: 11.348378}
-  - {x: -6.4499273, y: 2.3637834, z: 14.883598}
-  - {x: -4.167693, y: 1.6052865, z: 15.614714}
+  - {x: -6.242121, y: 2.3637834, z: 14.883598}
+  - {x: -4.167693, y: 1.742453, z: 15.485971}
   - {x: -3.6376822, y: 1.702839, z: 14.704299}
   nodeCount: 12
   initialized: 1
   initialName: New Path 2
-  pathVisible: 1
+  pathVisible: 0
 --- !u!114 &114470543422582478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2011,15 +2099,53 @@ MonoBehaviour:
   pathName: FromLoopToPuzzleA
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
-  - {x: -4.43564, y: 4.7385488, z: -12.772203}
-  - {x: -4.2633457, y: 4.761098, z: -15.993184}
+  - {x: -4.43564, y: 4.7385488, z: -13.563659}
+  - {x: -4.469674, y: 4.930292, z: -15.993184}
   - {x: -5.848414, y: 5.7979665, z: -28.166235}
   - {x: -6.895379, y: 5.7444077, z: -31.435835}
-  - {x: -4.055303, y: 5.6676292, z: -33.09852}
+  - {x: -4.3658366, y: 6.062029, z: -32.558037}
   nodeCount: 5
   initialized: 1
   initialName: New Path 1
   pathVisible: 1
+--- !u!114 &114475308443695534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486303877752020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc64aca77a4bc84f9a15ccd92d26878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directBinaural: 1
+  interpolation: 1
+  physicsBasedAttenuation: 1
+  airAbsorption: 1
+  dipoleWeight: 0
+  dipolePower: 0
+  occlusionMode: 3
+  occlusionMethod: 0
+  sourceRadius: 1
+  directMixLevel: 1
+  reflections: 1
+  indirectBinaural: 1
+  indirectMixLevel: 1
+  simulationType: 0
+  uniqueIdentifier: 
+  avoidSilenceDuringInit: 0
+  bakingRadius: 16
+  useAllProbeBoxes: 0
+  probeBoxes: []
+  bakedProbeNames: []
+  bakedProbeDataSizes: 
+  bakedDataSize: 0
+  bakedStatsFoldout: 0
+  bakeToggle: 0
+  bakedDataIdentifier:
+    identifier: 0
+    type: 0
 --- !u!114 &114504657468024252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2034,11 +2160,11 @@ MonoBehaviour:
   pathName: FlyAroundHole
   pathColor: {r: 0.6792453, g: 0.34368697, b: 0.09291565, a: 1}
   nodes:
-  - {x: -5.1517706, y: 5.1335745, z: -10.167629}
+  - {x: -5.0872917, y: 5.1335745, z: -10.203509}
   - {x: -5.0411515, y: 5.1449904, z: -11.752998}
-  - {x: -3.5736966, y: 4.476364, z: -12.651548}
-  - {x: -3.7177567, y: 4.456031, z: -10.41278}
-  - {x: -4.6673303, y: 5.234864, z: -9.739848}
+  - {x: -3.735834, y: 4.743792, z: -12.651548}
+  - {x: -3.8473375, y: 4.9597673, z: -10.41278}
+  - {x: -4.6085277, y: 5.234864, z: -9.745766}
   nodeCount: 5
   initialized: 1
   initialName: New Path 3
@@ -2057,7 +2183,7 @@ MonoBehaviour:
   pathName: FromNarrativeToPillar
   pathColor: {r: 1, g: 0, b: 0.15532255, a: 1}
   nodes:
-  - {x: -4.0323906, y: 1.4747332, z: 14.602311}
+  - {x: -3.637682, y: 1.702839, z: 14.7043}
   - {x: -4.064032, y: 2.7759352, z: 10.93794}
   - {x: 2.545683, y: 2.400622, z: 9.748413}
   - {x: 6.402518, y: 1.9888744, z: 3.686701}
@@ -2110,9 +2236,9 @@ MonoBehaviour:
   pathName: FromCaveEnterenceToLoop
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
-  - {x: -2.3403442, y: 4.1657467, z: -6.782764}
-  - {x: -4.469957, y: 5.445938, z: -7.2961}
-  - {x: -4.912596, y: 5.133574, z: -8.560789}
+  - {x: -3.133891, y: 4.598973, z: -8.211077}
+  - {x: -4.469957, y: 5.445938, z: -7.8367505}
+  - {x: -4.912596, y: 5.133574, z: -9.147359}
   nodeCount: 3
   initialized: 1
   initialName: New Path 1

@@ -8,7 +8,14 @@ public class destructable_box : MonoBehaviour
     public GameObject parent;
     //public bool test = false;
 
+    public AudioClip crumble;
+    private AudioSource source;
 
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+
+    }
 
     void OnCollisionEnter(Collision target)
     {
@@ -16,6 +23,8 @@ public class destructable_box : MonoBehaviour
 
         if (target.collider.tag == "Pickaxe")
         {
+            source.PlayOneShot(crumble);
+
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;

@@ -18,12 +18,13 @@ public class audioManager : MonoBehaviour
     Transform rightHand; //Is Camera(head)
     [SerializeField]
     Transform caveTrigger;
-
+    [SerializeField]
+    Transform caveTrigger2;
 
     public GameObject puzzleSolved;
 
     bool climbed;
-    bool incave;
+    bool incave,incave2;
     bool puzzleDone;
 
     void Start()
@@ -43,18 +44,18 @@ public class audioManager : MonoBehaviour
     void Update()
     {
 
-        if (!climbed)
-        {
-            if ((Vector3.Distance(leftHand.position, PickaxeInHand.transform.position) < 0.2f) || (Vector3.Distance(rightHand.position, PickaxeInHand.transform.position) < 0.2f))
-            {
-                AudioSource audio = GetComponent<AudioSource>();
-                audio.Stop();
+        //if (!climbed)
+        //{
+        //    if ((Vector3.Distance(leftHand.position, PickaxeInHand.transform.position) < 0.2f) || (Vector3.Distance(rightHand.position, PickaxeInHand.transform.position) < 0.2f))
+        //    {
+        //        AudioSource audio = GetComponent<AudioSource>();
+        //        audio.Stop();
 
-                audio.clip = cliffClip;
-                audio.Play();
-                climbed = true;
-            }
-        }
+        //        audio.clip = cliffClip;
+        //        audio.Play();
+        //        climbed = true;
+        //    }
+        //}
 
         if(!incave)
         {
@@ -63,23 +64,37 @@ public class audioManager : MonoBehaviour
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.Stop();
 
-                audio.clip = caveClip;
+                audio.clip = cliffClip;
                 audio.Play();
                 incave = true;
             }
         }
 
-        if(!puzzleDone)
+
+        if (!incave2)
         {
-            if (puzzleSolved.GetComponent<Room2Cleared>().solved)
+            if ((Vector3.Distance(leftHand.position, caveTrigger2.transform.position) < 3f) || (Vector3.Distance(rightHand.position, caveTrigger2.transform.position) < 3f))
             {
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.Stop();
+
                 audio.clip = puzzleClip;
                 audio.Play();
-                puzzleDone = true;
+                incave = true;
             }
         }
+
+        //if (!puzzleDone)
+        //{
+        //    if (puzzleSolved.GetComponent<Room2Cleared>().solved)
+        //    {
+        //        AudioSource audio = GetComponent<AudioSource>();
+        //        audio.Stop();
+        //        audio.clip = puzzleClip;
+        //        audio.Play();
+        //        puzzleDone = true;
+        //    }
+        //}
 
     }
 

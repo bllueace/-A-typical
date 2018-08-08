@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RotatePuzle : MonoBehaviour
 {
+    public AudioClip turning;
+    private AudioSource source;
+
 
     float speed = 90.0f;
     Quaternion quatern;
@@ -12,6 +15,8 @@ public class RotatePuzle : MonoBehaviour
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
+
         quatern = transform.localRotation;        
     }
 
@@ -52,6 +57,7 @@ public class RotatePuzle : MonoBehaviour
             if (transform.localRotation == quatern)
             {
                 quatern = Quaternion.AngleAxis(90.0f, Vector3.up) * quatern;
+                source.PlayOneShot(turning);
             }
         }
         if (collider.gameObject.layer == LayerMask.NameToLayer("LeftHand"))
@@ -60,6 +66,8 @@ public class RotatePuzle : MonoBehaviour
             if (transform.localRotation == quatern)
             {
                 quatern = Quaternion.AngleAxis(-90.0f, Vector3.up) * quatern;
+                source.PlayOneShot(turning);
+             
             }
         }
     }
