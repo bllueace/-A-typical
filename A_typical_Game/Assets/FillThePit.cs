@@ -35,7 +35,7 @@ public class FillThePit : MonoBehaviour {
             //rockCount++;
             GameObject go = GameObject.Find("BlockPitTeleport");
 
-            //Destroy(go.GetComponent<BoxCollider>());
+            Destroy(go.GetComponent<BoxCollider>());
         }
 
     }
