@@ -29,7 +29,7 @@ Shader "Custom/OverlayEmmisive" {
 
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
-		 #pragma surface surf Standard vertex:vert fullforwardshadows // Added: Vertex color
+		#pragma surface surf Standard vertex:vert fullforwardshadows // Added: Vertex color
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
 
@@ -46,22 +46,12 @@ Shader "Custom/OverlayEmmisive" {
 
 		};
 
-		sampler2D _MainTex;
-			sampler2D _BumpMap; // Added: for normal map
-			sampler2D _Emi_wall; //Added: Emmisive texture of the circles
-			sampler2D _Emi_circles; //Added: Emmisive texture of the circles
-			sampler2D _Emi_Line_door; //Added: Emmisive texture of the line going toward door
-			sampler2D _Emi_Line_Top_Left; //Added: Emmisive texture of the top left line
-			sampler2D _Emi_Line_Top_Right; //Added: Emmisive texture of the top right line
-			sampler2D _Emi_Line_Bottom_Left; //Added: Emmisive texture of the bottom left line
-			sampler2D _Emi_Line_Bottom_Right; //Added: Emmisive texture of the bottom right line
-
-			fixed4 _EmissionColor; // Added for emissive
-			float _EmissionIntensity; //Added for emissive
-
-			half _Glossiness;
-			half _Metallic;
-			fixed4 _Color;
+		
+		
+		struct v2f {
+			float4 pos : SV_POSITION;
+			fixed4 color : COLOR;
+		};
 
 		//Function to use vertex Colorv
 		void vert (inout appdata_full v, out Input o)
@@ -70,7 +60,22 @@ Shader "Custom/OverlayEmmisive" {
              o.vertexColor = v.color; // Save the Vertex Color in the Input for the surf() method
          }
 
-		
+		sampler2D _MainTex;
+		sampler2D _BumpMap; // Added: for normal map
+		sampler2D _Emi_wall; //Added: Emmisive texture of the circles
+		sampler2D _Emi_circles; //Added: Emmisive texture of the circles
+		sampler2D _Emi_Line_door; //Added: Emmisive texture of the line going toward door
+		sampler2D _Emi_Line_Top_Left; //Added: Emmisive texture of the top left line
+		sampler2D _Emi_Line_Top_Right; //Added: Emmisive texture of the top right line
+		sampler2D _Emi_Line_Bottom_Left; //Added: Emmisive texture of the bottom left line
+		sampler2D _Emi_Line_Bottom_Right; //Added: Emmisive texture of the bottom right line
+
+		fixed4 _EmissionColor; // Added for emissive
+		float _EmissionIntensity; //Added for emissive
+
+		half _Glossiness;
+		half _Metallic;
+		fixed4 _Color;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
 		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -84,14 +89,14 @@ Shader "Custom/OverlayEmmisive" {
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 
-			fixed4 basecol = tex2D(_MainTex, IN.uv_MainTex); //Added
+			//fixed4 basecol = tex2D(_MainTex, IN.uv_MainTex); //Added
 			//Add the emission with an half4
 			half4 emission = (tex2D(_Emi_wall, IN.uv_MainTex) +
 				tex2D(_Emi_circles, IN.uv_MainTex) + tex2D(_Emi_Line_door, IN.uv_MainTex)
 				+  tex2D(_Emi_Line_Top_Left, IN.uv_MainTex) +  tex2D(_Emi_Line_Top_Right, IN.uv_MainTex) 
 				+  tex2D(_Emi_Line_Bottom_Left, IN.uv_MainTex) +  tex2D(_Emi_Line_Bottom_Right, IN.uv_MainTex))* _EmissionColor * _EmissionIntensity ; //Added: overlay all emissive textures
 
-			o.Albedo = basecol * _Color;
+			o.Albedo = c.rgb * IN.vertexColor; //Changed
 			o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap)); // Added: for normal map
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;

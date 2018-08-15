@@ -8,12 +8,14 @@ public class destructable_box : MonoBehaviour
     public GameObject parent;
     //public bool test = false;
 
-    public AudioClip crumble;
-    private AudioSource source;
+    //public AudioClip crumble;
+    //private AudioSource source;
+
+    //public GameObject soundManager;
 
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        //source = GetComponent<AudioSource>();
 
     }
 
@@ -23,7 +25,8 @@ public class destructable_box : MonoBehaviour
 
         if (target.collider.tag == "Pickaxe")
         {
-            source.PlayOneShot(crumble);
+            //soundManager.SetActive(true);
+            //source.PlayOneShot(crumble);
 
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
