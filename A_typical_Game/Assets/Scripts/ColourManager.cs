@@ -48,7 +48,7 @@ public class ColourManager : MonoBehaviour
     {
         if (shouldRun)
         {
-            ChangeColour();
+            //ChangeColour();
             shouldRun = false;
         }
     }

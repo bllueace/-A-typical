@@ -14,11 +14,12 @@ public class BlockSwitch : MonoBehaviour {
     {
         //Debug.Log("missing block");
 
+        //if collider is the missing block
         if (target.collider.tag == "missingBlock")
         {
-            firstBlock.SetActive(false);
-            replacedBlock.SetActive(true);
-            myLight.SetActive(false);
+            firstBlock.SetActive(false); //disable old block
+            replacedBlock.SetActive(true); //enable replaced block
+            myLight.SetActive(false); //disable spot light
             myself.SetActive(false);
         }
 

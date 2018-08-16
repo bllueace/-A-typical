@@ -6,14 +6,12 @@ public class ColourChange : MonoBehaviour
 {
     MeshRenderer myMesh;
 
-    public Material newMat;
+    public Material newMat; //material colour will change to
 
     public int materialToChange;
 
-    public float changeRate = 0.001f;
-    //public float targetRed = 0.3921f;
-    //public float targetGreen = 0.1568f;
-    //public float targetBlue = 0.2745f;
+    public float changeRate = 0.001f; //rate for colour change 
+
     [HideInInspector]
     public bool shouldRun = true;
 
@@ -27,8 +25,9 @@ public class ColourChange : MonoBehaviour
         if (shouldRun)
         {
 
-            Color myColour = myMesh.materials[materialToChange].color;
+            Color myColour = myMesh.materials[materialToChange].color; //get the material
 
+            //if color is not what it needs to be, grow or reduce until true
             if (myColour.r < newMat.color.r)
                 myColour.r += changeRate;
             if (myColour.r > newMat.color.r)

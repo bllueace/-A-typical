@@ -24,6 +24,7 @@ public class PulseLight : MonoBehaviour {
 	
 	void Update ()
     {
+        //increase/decrease brightness by rate specified
         if (flip) 
             brightness += rate;
         else

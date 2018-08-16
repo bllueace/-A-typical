@@ -6,16 +6,9 @@ public class destructable_box : MonoBehaviour
 {
     public GameObject destroyedVersion;
     public GameObject parent;
-    //public bool test = false;
-
-    //public AudioClip crumble;
-    //private AudioSource source;
-
-    //public GameObject soundManager;
 
     void Start()
     {
-        //source = GetComponent<AudioSource>();
 
     }
 
@@ -23,16 +16,16 @@ public class destructable_box : MonoBehaviour
     {
         //Debug.Log("pickaxe hit collision");
 
-        if (target.collider.tag == "Pickaxe")
+        if (target.collider.tag == "Pickaxe") //if colliding with pickaxe
         {
-            //soundManager.SetActive(true);
-            //source.PlayOneShot(crumble);
-
+            //disable graivty, make it kinematic and set velocity to zero
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
+            //replace object with destroyed version
             Instantiate(destroyedVersion, transform.position, transform.rotation);
+            //remove old object
             Destroy(gameObject);
             parent.SetActive(false);
         }
