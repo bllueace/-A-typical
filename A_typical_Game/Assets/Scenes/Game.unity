@@ -7923,11 +7923,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colapse: {fileID: 8300000, guid: a474206c4ea4aba46b6a84fb284ce858, type: 3}
+  source: {fileID: 0}
   Player: {fileID: 1235888292}
   statue: {fileID: 1481204182}
   beak: {fileID: 1545898917}
   statueFallen: {fileID: 393488300}
   tpBlock: {fileID: 1447558601}
+  hasColapset: 0
 --- !u!82 &99931914
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16980,7 +16982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 705, y: -70}
+  m_AnchoredPosition: {x: 1154, y: -70}
   m_SizeDelta: {x: 142, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663385026
@@ -27828,7 +27830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 781, y: -15}
+  m_AnchoredPosition: {x: 1230, y: -15}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228705527

@@ -18,6 +18,7 @@ public class FixedJointScript : MonoBehaviour
 
             gameObject.transform.parent.rotation = col.gameObject.transform.parent.rotation;
 
+            //check for sides coliding
             if (gameObject.name == "Left")
             {
                 //calculate the snap coardinates

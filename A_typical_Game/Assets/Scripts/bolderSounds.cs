@@ -13,6 +13,4 @@ public class bolderSounds : MonoBehaviour {
         source.PlayOneShot(crumble[Random.Range(0, 2)]); //choose a random sound effect from the array
 
     }
-
-
 }

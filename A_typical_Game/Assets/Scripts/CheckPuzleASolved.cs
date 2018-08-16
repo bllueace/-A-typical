@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class CheckPuzleASolved : MonoBehaviour
 {
+    //assign each piece in inspector
     public RotatePuzle piece1;
     public RotatePuzle piece2;
     public RotatePuzle piece3;
     public RotatePuzle piece4;
-
+    //load emission texture
     public Texture T_emi_lineBottomRight;
-
+    //check solve condition
     public bool puzleSolved;
     public GameObject floor;
 
     // Use this for initialization
     void Start()
     {
+        //access each pieces rotation script
         GameObject p1 = GameObject.Find("puzzleBlock_01");
         piece1 = p1.GetComponent<RotatePuzle>();
 
@@ -33,7 +35,7 @@ public class CheckPuzleASolved : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //check for puzzle soolved
         if (!puzleSolved)
         {
             if (piece1.blockCorrect == true && piece2.blockCorrect == true && piece3.blockCorrect == true && piece4.blockCorrect == true)
@@ -51,8 +53,6 @@ public class CheckPuzleASolved : MonoBehaviour
                 piece3.GetComponent<RotatePuzle>().enabled = false;
                 piece4.GetComponent<RotatePuzle>().enabled = false;
 
-
-
                 floor.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", T_emi_lineBottomRight);
 
             }
@@ -60,8 +60,6 @@ public class CheckPuzleASolved : MonoBehaviour
             {
                 floor.GetComponent<Renderer>().material.SetTexture("_Emi_Line_Bottom_Right", null);
             }
-
-
         }
     }
 }

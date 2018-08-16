@@ -16,15 +16,12 @@ public class StartAnimation : MonoBehaviour {
 
     void OnTriggerEnter()
     {
-        // ani.enabled = true;
-        // Destroy(gameObject);
-
         ani.Play("TestAnim");
     }
 
 	// Update is called once per frame
 	void Update () {
-		
+		//test the animation
         if(Input.GetKeyDown("p"))
         {
             ani.Play("TestAnim");

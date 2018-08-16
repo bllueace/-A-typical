@@ -9,7 +9,7 @@ public class FollowWaypoint : StateMachineBehaviour {
     GameObject[] waypoints;
     int currentWP;
 
-
+    //find all current waypoints
     void Awake()
     {
         waypoints = GameObject.FindGameObjectsWithTag("WP");

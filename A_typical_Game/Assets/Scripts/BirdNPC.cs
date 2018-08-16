@@ -5,10 +5,10 @@ using UnityEngine;
 public class BirdNPC : MonoBehaviour {
 
     Animator anim;
-    [SerializeField] Transform leftHand; //Is Camera(head)
-    [SerializeField] Transform rightHand; //Is Camera(head)
-    [SerializeField] Transform Bird; //Is Camera(head)
-    [SerializeField] Transform PickaxeInHand; // Script of the pickaxe in the hand
+    [SerializeField] Transform leftHand; //Is lefthand
+    [SerializeField] Transform rightHand; //Is right hand
+    [SerializeField] Transform Bird; // bird location
+    [SerializeField] Transform PickaxeInHand; // picakxe location
 
     public GameObject holeFull;
 
@@ -16,40 +16,37 @@ public class BirdNPC : MonoBehaviour {
     public GameObject leavingNarative;
     bool flying = false;
     float dist;
+
     // Use this for initialization
     void Start()
     {
+        //gets NPC animator component
         anim = GetComponent<Animator>();
-
+        //path from pit to narative point 1
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPitToNarrative"), "time", 20, "easetype", iTween.EaseType.linear,"orientToPath", true, "lookTime", 0.5,"lookAhead",0.001,"oncomplete", "onPathComplete"));
     }
-	
-
+	//on certain path complete
     void onPathComplete()
     {
-        //anim.SetBool("IDLE", true);
-
+        //start fly end animation
         anim.Play(stateName: "FlyEnd");
         currentPath++;
         flying = false;
         //Debug.Log("I have arived! *chirp* *chirp*");
     }
 
+    //on other path complete
     void onPathCompleteTwo()
     {
-        //anim.SetBool("IDLE", true);
-
+        //plays flight animation
         anim.Play(stateName: "Fly");
-        // currentPath++;
         currentPath = 99;
         flying = false;
-        //anim.Play(stateName: "Fly");
+        //fly's around the hole in level 2
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 4, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathCompleteTwo"));
-
-        //flying = false;
         //Debug.Log("I have arived! *chirp* *chirp*");
     }
-
+    //on other path complete
     void onPathCompleteThree()
     {
         flying = true;
@@ -59,18 +56,17 @@ public class BirdNPC : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        dist = Vector3.Distance(rightHand.position, Bird.transform.position);
-
-        //Debug.Log("Distance to bird is: "+ dist);
-
+        //checks if path 1 has been complete
         if (currentPath == 1 && flying == false)
         {
+            //actiavre path 2 if player gets too close
             if ((Vector3.Distance(leftHand.position, Bird.transform.position) < 0.2f) || (Vector3.Distance(rightHand.position, Bird.transform.position) < 0.2f))
             {
                 flying = true;
                 anim.Play(stateName: "Fly");
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromNarrativeToPillar"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
             }
+            //actiavre path 2 if player gets too close
             else if (Vector3.Distance(rightHand.position, Bird.transform.position) > 5f)
             {
                 flying = true;
@@ -79,6 +75,7 @@ public class BirdNPC : MonoBehaviour {
             }
         }
 
+        //next narative area path
         if (currentPath == 2 && !flying)
         {
             if ((Vector3.Distance(leftHand.position, Bird.transform.position) < 5.5f) || (Vector3.Distance(rightHand.position, Bird.transform.position) < 5.5f))
@@ -88,7 +85,7 @@ public class BirdNPC : MonoBehaviour {
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromPillarToPickaxe"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
             }
         }
-
+        //next narative area path
         if (currentPath == 3 && !flying)
         {
             if ((Vector3.Distance(leftHand.position, PickaxeInHand.transform.position) < 0.2f) || (Vector3.Distance(rightHand.position, PickaxeInHand.transform.position) < 0.2f))
@@ -99,7 +96,7 @@ public class BirdNPC : MonoBehaviour {
             }
 
         }
-
+        //next narative area path
         if (currentPath == 4 && !flying)
         {
             if ((Vector3.Distance(leftHand.position, Bird.transform.position) < 2f) || (Vector3.Distance(rightHand.position, Bird.transform.position) < 2f))
@@ -110,17 +107,14 @@ public class BirdNPC : MonoBehaviour {
             }
 
         }
-
+        //next narative area path
         if (currentPath == 5)
         {
             flying = true;
             anim.Play(stateName: "Fly");
             iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 4, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathComplete"));
-
-            //iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 3,"looptype","loop", "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001));
         }
 
-        //int count = holeFull.GetComponent<FillThePit>().rockCount;
 
         if (currentPath == 99)
         {
@@ -131,25 +125,5 @@ public class BirdNPC : MonoBehaviour {
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FromLoopToPuzzleA"), "time", 10, "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001, "oncomplete", "onPathCompleteThree"));
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    anim.Play(stateName: "FlyStart");
-
-        //    //iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 3, "looptype", "loop", "easetype", iTween.EaseType.linear, "orientToPath", true, "lookTime", 0.5, "lookAhead", 0.001));
-        //    iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath("FlyAroundHole"), "time", 5, "loopType", "loop","easetype", iTween.EaseType.linear, "orientToPath", true, "delay", 0));
-        //}
-
     }
 }

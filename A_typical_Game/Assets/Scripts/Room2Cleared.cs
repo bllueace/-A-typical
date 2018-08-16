@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Room2Cleared : MonoBehaviour
 {
+    //create variables
     public CheckPuzleASolved puzleA;
     public CheckPuzleBSolved puzleB;
     public CheckPuzleCSolved puzleC;
     public CheckPuzleDSolved puzleD;
-
-
+    //load emission textures
     public Texture T_emi_Circles;
     public Texture T_emi_lineDoor;
-
+    //check solved
     public bool solved;
 
     // Use this for initialization
@@ -34,9 +34,10 @@ public class Room2Cleared : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if all pieces are solved, if true activate emission on the wall and floor 
         if(puzleA.puzleSolved == true && puzleB.puzleSolved == true && puzleC.puzleSolved == true && puzleD.puzleSolved == true)
         {
-            //{
+            
             GameObject door1 = GameObject.Find("level2Wall_01");
             GameObject door2 = GameObject.Find("level2Wall_02");
             GameObject door3 = GameObject.Find("level2Wall_03");
@@ -63,9 +64,6 @@ public class Room2Cleared : MonoBehaviour
             door11.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
             door12.GetComponent<Renderer>().material.SetInt("_EmissionIntensity", 2);
 
-
-
-            //}
             this.GetComponent<Renderer>().material.SetTexture("_Emi_circles", T_emi_Circles);
            this.GetComponent<Renderer>().material.SetTexture("_Emi_Line_door", T_emi_lineDoor);
 
