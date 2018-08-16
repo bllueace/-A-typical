@@ -10,7 +10,7 @@ public class bolderSounds : MonoBehaviour {
     void Start () {
 
         source = GetComponent<AudioSource>(); 
-        source.PlayOneShot(crumble[Random.Range(0, 2)]); //choose a random sound effect from the array
+        source.PlayOneShot(crumble[Random.Range(0, 3)]); //choose a random sound effect from the array
 
     }
 }
